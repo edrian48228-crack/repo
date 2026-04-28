@@ -11,7 +11,7 @@
  *
  * Bump VERSION cuando cambies precache.
  */
-const VERSION = "v3.6.7";
+const VERSION = "v1.4.0";
 const STATIC_CACHE  = `mtp-static-${VERSION}`;
 const RUNTIME_CACHE = `mtp-runtime-${VERSION}`;
 const HTML_CACHE    = `mtp-html-${VERSION}`;
@@ -78,7 +78,7 @@ self.addEventListener("fetch", (event) => {
   if (isHTML(req))                     return event.respondWith(networkFirst(req, HTML_CACHE, 6000, true));
   if (isGoogleFont(url))               return event.respondWith(cacheFirst(req, FONT_CACHE));
   if (isGitHubAPI(url))                return event.respondWith(networkFirst(req, RUNTIME_CACHE, 5000));
-  if (isGitHubRaw(url))                return event.respondWith(networkFirst(req, RUNTIME_CACHE, 8000));
+  if (isGitHubRaw(url))                return event.respondWith(staleWhileRevalidate(req, RUNTIME_CACHE));
   if (isImage(req, url))               return event.respondWith(cacheFirst(req, IMG_CACHE));
   return event.respondWith(staleWhileRevalidate(req, RUNTIME_CACHE));
 });

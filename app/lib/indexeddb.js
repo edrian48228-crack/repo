@@ -1,7 +1,7 @@
 /* indexeddb.js — Almacenamiento offline (config, cache de JSON, cola de cambios, logs, backups). */
 export const DB = (() => {
   const NAME = "mitiendapro";
-  const VERSION = 2;
+  const VERSION = 1;
   let dbp = null;
 
   function open() {
