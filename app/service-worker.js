@@ -11,7 +11,7 @@
  *
  * Bump VERSION cuando cambies precache.
  */
-const VERSION = "v5.0.1";
+const VERSION = "v5.0.2";
 const STATIC_CACHE  = `mtp-static-${VERSION}`;
 const RUNTIME_CACHE = `mtp-runtime-${VERSION}`;
 const HTML_CACHE    = `mtp-html-${VERSION}`;
