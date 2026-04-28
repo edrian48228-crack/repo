@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover, user-scalable=yes">
+<title>MiTienda Pro — Sistema de Ventas</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/styles.css">
+<script src="./js/guard.js"></script>
+</head>
+<body>
+<canvas id="bgc"></canvas>
+<div class="wrap">
+
+<!-- ══════ HEADER ══════ -->
+<header id="hdr">
+  <div class="hdr-in">
+    <div id="hdr-logo" onclick="location.reload()" title="Inicio">
+      <div id="logo-box"><img id="logo-icon-img" src="" alt=""><span id="logo-box-emoji">🔥</span></div>
+      <div id="logo-texts"><span id="logo-name" id="hdr-logo-txt">MiTienda Pro</span><span id="logo-sub">Sistema de Ventas</span></div>
+    </div>
+    <nav class="hnav-wrap">
+      <a class="hnav hnav-free" href="#free-plan">🎁 Prueba Gratis</a>
+      <a class="hnav" href="#planes">💳 Planes</a>
+      <a class="hnav" href="#tiendas-sec">🏪 Nuestras Tiendas</a>
+      <a class="hnav" href="#propietario">🏠 Quiero la Tienda</a>
+      <a class="hnav" href="#caracteristicas">⚡ Ventajas</a>
+      <a class="hnav" href="#promocionar">📣 Promocionamos tu Tienda</a>
+      <a class="hnav" href="#links-sec">🔗 Mis Proyectos</a>
+      <a class="hnav" href="#testimonios-sec">⭐ Opiniones</a>
+      <a class="hnav" href="#tc-sec">📋 T&amp;C</a>
+      <a class="hnav" href="#contacto">📞 Contacto</a>
+    </nav>
+    <div class="hdr-right">
+      <a id="btn-goto-shop" onclick="gotoShop();return false;" title="Ir a Mi Tienda">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Mi Tienda
+      </a>
+      <button class="btn-reg-sell" onclick="openVendorModal()">🏪 Registrarme como Vendedor</button>
+      <button class="btn-admin-pro" onclick="openAdminLogin()">
+        <span class="bap-ico">🛡️</span><span>Admin</span><span class="bap-shine"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <div class="rings">
+    <div class="ring" style="--s:400px;--d:6s"></div>
+    <div class="ring" style="--s:700px;--d:9s;animation-delay:2s"></div>
+    <div class="ring" style="--s:1050px;--d:13s;animation-delay:4s"></div>
+    <div class="ring" style="--s:1400px;--d:17s;animation-delay:6s"></div>
+  </div>
+  <div class="sparks" id="sparks"></div>
+  <div style="position:relative;z-index:1;text-align:center;width:100%">
+    <div class="hero-badge">🔥 Sistema de Ventas Profesional · Edrian Cruz Down</div>
+    <h1 class="hero-title">
+      <span class="solid" id="htitle1">MITIENDA</span>
+      <span class="fire-t" id="htitle2">PRO</span>
+    </h1>
+    <p class="hero-sub" id="hsubt">Tu tienda online completa con carrito, inventario, dashboard y <strong>auto-actualización en todos los dispositivos</strong>. Desde 7 días gratis.</p>
+    <div class="hero-btns">
+      <a class="btn btn-free-hero btn-lg" href="#free-plan">🎁 Probar GRATIS 7 Días</a>
+      <a class="btn btn-ol btn-lg" href="#planes">💳 Ver Planes</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="sdot"></div><span>Deslizar</span></div>
+</section>
+
+<!-- ══════ STATS ══════ -->
+<div class="stats-bar">
+  <div class="stats-in">
+    <div><span class="sn">7</span><div class="sl">Días gratis</div></div>
+    <div><span class="sn" id="st-plans">5</span><div class="sl">Planes</div></div>
+    <div><span class="sn">100%</span><div class="sl">Personalizable</div></div>
+    <div><span class="sn">APK</span><div class="sl">App Android</div></div>
+    <div><span class="sn">24/7</span><div class="sl">Auto-Update</div></div>
+  </div>
+</div>
+
+<!-- ══════ FREE PLAN ══════ -->
+<section class="sec" id="free-plan">
+  <div class="sec-in">
+    <div class="rv">
+      <div class="sec-tag">🎁 Sin costo</div>
+      <h2 class="sec-h">Prueba <span class="ft">Totalmente Gratis</span></h2>
+      <p class="sec-sub">Sin tarjeta de crédito. Sin compromisos. Comprueba el poder del sistema antes de decidir.</p>
+    </div>
+    <div class="rv" style="margin-top:28px">
+      <div class="free-banner">
+        <div class="free-glow"></div>
+        <div class="free-badge">✨ Plan Gratuito</div>
+        <div class="free-duration">⏱️ 7 días de acceso completo · GRATIS</div>
+        <h2 class="free-title">Sistema Web <span class="gt">+ APK Android</span><br>sin costo para probar</h2>
+        <p class="free-sub" id="free-desc">Accede al sistema completo durante 7 días sin pagar nada. Incluye tienda pública, panel de administración, gestión de productos y la APK de Android. Solo contáctame por cualquiera de mis canales para activarlo.</p>
+        <div class="free-feats" id="free-feats">
+          <div class="free-feat">Sistema web completo</div>
+          <div class="free-feat">APK Android incluida</div>
+          <div class="free-feat">Panel de administración</div>
+          <div class="free-feat">Carrito de compras</div>
+          <div class="free-feat">Dashboard estadístico</div>
+          <div class="free-feat">Avatar promotor animado</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-ok btn-lg" onclick="freeWA()">📱 Solicitar por WhatsApp</button>
+          <a href="#planes" class="btn btn-ol">💳 Ver planes de pago</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PLANES ══════ -->
+<section class="sec" id="planes" style="padding-top:0">
+  <div class="sec-in">
+    <div class="rv">
+      <div class="sec-tag">💳 Suscripciones</div>
+      <h2 class="sec-h">Elige tu <span class="ft">Plan</span></h2>
+      <p class="sec-sub">Todas las funciones incluidas. Paga solo por el tiempo que necesitas.</p>
+    </div>
+    <div class="tgl-wrap rv">
+      <span class="tgl-lbl on" id="lbl-n">Precio normal</span>
+      <label class="tgl"><input type="checkbox" id="promo-tgl" onchange="togglePromo(this)"><div class="tgl-tr"></div><div class="tgl-dt"></div></label>
+      <span class="tgl-lbl" id="lbl-p">Con promoción</span>
+      <span class="promo-pill">+2,500 CUP / 3 meses</span>
+    </div>
+    <div class="plans-grid rv" id="plans-grid"></div>
+    <div class="ctbl-w rv"><table class="ctbl" id="compare-tbl"></table></div>
+    <div class="rv" style="margin-top:22px;background:linear-gradient(135deg,rgba(255,102,0,.08),rgba(255,34,0,.04));
+      border:1px solid rgba(255,102,0,.25);border-radius:var(--rc);padding:22px 26px;display:flex;gap:16px;align-items:flex-start">
+      <span style="font-size:28px;flex-shrink:0">🔔</span>
+      <div>
+        <div style="font-family:var(--fh);font-size:16px;font-weight:900;color:var(--o);margin-bottom:5px">¿Qué es la Promoción?</div>
+        <div style="font-size:13px;color:var(--t2);line-height:1.7">Al activar la <strong style="color:var(--t1)">Promoción</strong>, el precio de cada plan sube <strong style="color:var(--t1)">+2,500 CUP adicionales cada 3 meses</strong>. El toggle de arriba te muestra los precios con y sin promoción.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROPIETARIO ══════ -->
+<section class="sec" id="propietario">
+  <div class="sec-in">
+    <div class="rv">
+      <div class="sec-tag">🏠 Propiedad permanente</div>
+      <h2 class="sec-h">Sé el <span class="ft">Dueño</span></h2>
+      <p class="sec-sub">Pago único. Código fuente completo. Licencia permanente. Sin mensualidades jamás.</p>
+    </div>
+    <div class="own-grid rv" id="own-grid"></div>
+  </div>
+</section>
+
+<!-- ══════ CARACTERÍSTICAS ══════ -->
+<section class="sec" id="caracteristicas">
+  <div class="sec-in">
+    <div class="rv" style="text-align:center;margin-bottom:8px">
+      <div class="sec-tag" style="justify-content:center">⚡ Arsenal Completo</div>
+      <h2 class="sec-h" style="text-align:center">Todo lo que <span class="ft">Necesitas</span></h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">Un ecosistema de ventas profesional. Cada función diseñada para maximizar tus resultados.</p>
+    </div>
+    <div class="feat-grid-pro rv">
+
+      <!-- DESTACADO 1: TIENDA COMPLETA -->
+      <div class="feat-pro feat-hero">
+        <div class="feat-pro-glow"></div>
+        <div class="feat-pro-icon-wrap"><span class="feat-pro-icon">🛒</span></div>
+        <div class="feat-pro-content">
+          <div class="feat-pro-tag">Core</div>
+          <div class="feat-pro-name">Tienda Online Completa</div>
+          <div class="feat-pro-desc">Catálogo ilimitado, carrito inteligente, pedidos automáticos por WhatsApp, múltiples formas de pago. Todo sin programar.</div>
+          <div class="feat-pro-pills">
+            <span class="fpill">🛒 Carrito</span><span class="fpill">📱 WhatsApp</span><span class="fpill">💳 Pagos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESTACADO 2: ADMIN -->
+      <div class="feat-pro feat-hero feat-admin-hero">
+        <div class="feat-pro-glow" style="background:radial-gradient(circle,rgba(168,85,247,.2),transparent 70%)"></div>
+        <div class="feat-pro-icon-wrap" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><span class="feat-pro-icon">🔐</span></div>
+        <div class="feat-pro-content">
+          <div class="feat-pro-tag" style="background:rgba(168,85,247,.15);color:#a855f7;border-color:rgba(168,85,247,.3)">Admin</div>
+          <div class="feat-pro-name">Panel de Administración</div>
+          <div class="feat-pro-desc">Acceso seguro con contraseña. Gestiona productos, precios, stock, proveedores y toda la configuración desde un solo lugar.</div>
+          <div class="feat-pro-pills">
+            <span class="fpill fpill-p">🔑 Seguro</span><span class="fpill fpill-p">📦 Inventario</span><span class="fpill fpill-p">📊 Métricas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PEQUEÑAS -->
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">📊</div>
+        <div class="feat-sm-name">Dashboard</div>
+        <div class="feat-sm-desc">Estadísticas y métricas en tiempo real</div>
+      </div>
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">📱</div>
+        <div class="feat-sm-name">App Android</div>
+        <div class="feat-sm-desc">APK personalizada y distribuida</div>
+      </div>
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">🔄</div>
+        <div class="feat-sm-name">Auto-Update</div>
+        <div class="feat-sm-desc">Actualizaciones sin intervención</div>
+      </div>
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">🏭</div>
+        <div class="feat-sm-name">Proveedores</div>
+        <div class="feat-sm-desc">Portal exclusivo con acceso propio</div>
+      </div>
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">🎨</div>
+        <div class="feat-sm-name">Personalizable</div>
+        <div class="feat-sm-desc">Colores, textos, links y fotos</div>
+      </div>
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">📂</div>
+        <div class="feat-sm-name">Backup JSON</div>
+        <div class="feat-sm-desc">Exportar e importar tus datos</div>
+      </div>
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">🤖</div>
+        <div class="feat-sm-name">Avatar IA</div>
+        <div class="feat-sm-desc">Promotor animado e inteligente</div>
+      </div>
+      <div class="feat-pro feat-sm">
+        <div class="feat-sm-icon">📡</div>
+        <div class="feat-sm-name">Sin Backend</div>
+        <div class="feat-sm-desc">Zero servidores adicionales</div>
+      </div>
+
+      <!-- BANNER ACCESO ADMIN -->
+      <div class="feat-pro feat-admin-cta">
+        <div class="feat-admin-cta-inner">
+          <div class="feat-admin-icon-ring">
+            <div class="adm-ring adm-ring1"></div>
+            <div class="adm-ring adm-ring2"></div>
+            <div class="adm-ring adm-ring3"></div>
+            <span class="adm-center-icon">⚙️</span>
+          </div>
+          <div>
+            <div class="feat-admin-cta-title">Acceso al Panel Admin</div>
+            <div class="feat-admin-cta-sub">Contraseña segura · Gestión total · Exportar PDF/DOC</div>
+            <button class="btn btn-fire btn-sm" style="margin-top:12px" onclick="openAdminLogin()">🔐 Entrar al Admin</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ QUICK ACCESS ══════ -->
+<div class="qa-float">
+  <a class="qa-btn" href="#tiendas-sec" style="--qc:#ff6600;--qcs:rgba(255,102,0,.5)"><span style="font-size:18px">🏪</span><span class="qa-lbl">Visitar Nuestras Tiendas</span></a>
+  <button class="qa-btn" onclick="openAffiliateLink()" style="--qc:#22c55e;--qcs:rgba(34,197,94,.5);border:1.5px solid #22c55e;color:#22c55e;background:rgba(8,8,8,.92)"><span style="font-size:18px">💰</span><span class="qa-lbl">Ganar Dinero Promoviendo</span></button>
+</div>
+<!-- ══════ AVATAR FLOTANTE (parte inferior derecha) ══════ -->
+<div id="floating-avatar" class="float-ava-wrap">
+  <!-- Círculos en movimiento -->
+  <div class="float-ava-rings">
+    <div class="far far1"></div>
+    <div class="far far2"></div>
+    <div class="far far3"></div>
+  </div>
+  <!-- Cuerpo del avatar -->
+  <div class="float-ava-body" id="float-ava-body" onclick="cycleAvaMsg()">
+    <div class="float-ava-head" id="float-ava-head">
+      <!-- imagen o cara animada generada por JS -->
+    </div>
+  </div>
+  <!-- Burbuja de texto -->
+  <div class="float-ava-bubble" id="float-ava-bubble">
+    <div class="fab-close" onclick="collapseAvatar()" title="Cerrar">✕</div>
+    <div class="fab-label" id="float-ava-name">🤖 TiendaBot</div>
+    <div class="fab-text" id="float-ava-txt">¡Hola! ¿Por qué necesitas tu propia tienda?</div>
+    <div class="fab-dots">
+      <span class="fabd fabd1"></span>
+      <span class="fabd fabd2"></span>
+      <span class="fabd fabd3"></span>
+    </div>
+  </div>
+  <!-- Botón colapsado -->
+  <button class="float-ava-btn-expand" id="float-ava-expand" onclick="expandAvatar()" title="Ver mensaje">
+    <div class="float-ava-rings">
+      <div class="far far1"></div><div class="far far2"></div>
+    </div>
+    <span id="float-ava-btn-ico">🤖</span>
+  </button>
+</div>
+
+<!-- Sección de mensajes del avatar (visible en la página) -->
+<section id="avatar-sec" style="padding:60px 0;background:linear-gradient(180deg,var(--bg) 0%,rgba(255,34,0,.03) 50%,var(--bg) 100%)">
+  <div class="sec-in">
+    <div class="rv" style="text-align:center;margin-bottom:40px">
+      <div class="sec-tag" style="justify-content:center">🤖 Promotor IA</div>
+      <h2 class="sec-h" style="text-align:center">¿Por qué <span class="ft">tu propia tienda</span>?</h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">Tu avatar promotor flota en la esquina y convence a tus clientes con estos mensajes.</p>
+    </div>
+    <div class="ava-msgs-showcase rv" id="ava-msgs-list"></div>
+  </div>
+</section>
+
+<!-- ══════ LINKS ══════ -->
+<!-- ══════ PROMOCIONAR MI TIENDA ══════ -->
+<section class="sec" id="promocionar" style="background:linear-gradient(160deg,#080808 0%,#0d0616 40%,#150830 65%,#080808 100%);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none">
+    <div style="position:absolute;top:-80px;left:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.1),transparent 65%)"></div>
+    <div style="position:absolute;bottom:-50px;right:-30px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,102,0,.08),transparent 65%)"></div>
+    <div id="promo-dots" style="position:absolute;inset:0;overflow:hidden"></div>
+  </div>
+  <div class="sec-in" style="position:relative;z-index:1">
+    <div class="rv" style="text-align:center;margin-bottom:44px">
+      <div class="sec-tag" style="justify-content:center;background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.3);color:#c084fc">📣 Haz crecer tu negocio</div>
+      <h2 class="sec-h" style="text-align:center">Promocionamos tu <span style="background:linear-gradient(90deg,#a855f7,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Tienda Online</span></h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">Con MiTienda Pro tienes todas las herramientas para atraer clientes y multiplicar tus ventas desde el primer día.</p>
+    </div>
+    <!-- Estrategias de promoción -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:44px" class="rv">
+      <div class="promo-strat-card" style="--clr:#a855f7;--clr-b:rgba(168,85,247,.12)">
+        <div class="psc-ico">📱</div>
+        <div class="psc-name">WhatsApp Marketing</div>
+        <div class="psc-desc">Tu tienda genera pedidos automáticos por WhatsApp. Clientes contactan directamente con un clic.</div>
+      </div>
+      <div class="promo-strat-card" style="--clr:#06b6d4;--clr-b:rgba(6,182,212,.12)">
+        <div class="psc-ico">📷</div>
+        <div class="psc-name">Redes Sociales</div>
+        <div class="psc-desc">Comparte el link de tu tienda en Facebook, Instagram, TikTok y atrae clientes digitales.</div>
+      </div>
+      <div class="promo-strat-card" style="--clr:#22c55e;--clr-b:rgba(34,197,94,.12)">
+        <div class="psc-ico">🤖</div>
+        <div class="psc-name">Avatar Promotor IA</div>
+        <div class="psc-desc">Tu avatar animado convence a los visitantes mientras navegas. Trabaja 24/7 por ti.</div>
+      </div>
+      <div class="promo-strat-card" style="--clr:#f59e0b;--clr-b:rgba(245,158,11,.12)">
+        <div class="psc-ico">🔗</div>
+        <div class="psc-name">Link en Bio</div>
+        <div class="psc-desc">Un solo link profesional para todos tus perfiles. Clientes llegan directo a tu catálogo.</div>
+      </div>
+      <div class="promo-strat-card" style="--clr:#ef4444;--clr-b:rgba(239,68,68,.12)">
+        <div class="psc-ico">🏷️</div>
+        <div class="psc-name">Ofertas y Descuentos</div>
+        <div class="psc-desc">Crea descuentos por temporada y cantidad directamente desde tu panel admin en segundos.</div>
+      </div>
+      <div class="promo-strat-card" style="--clr:#ff6600;--clr-b:rgba(255,102,0,.12)">
+        <div class="psc-ico">📦</div>
+        <div class="psc-name">Inventario Visible</div>
+        <div class="psc-desc">Muestra stock en tiempo real. Las alertas de "últimas unidades" impulsan la compra inmediata.</div>
+      </div>
+    </div>
+    <!-- CTA de promoción -->
+    <div class="rv" style="background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(6,182,212,.08));border:1.5px solid rgba(168,85,247,.3);border-radius:20px;padding:32px 28px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+      <div style="font-size:52px;filter:drop-shadow(0 0 16px rgba(168,85,247,.7));flex-shrink:0;animation:badgeIco 2s ease-in-out infinite alternate">🚀</div>
+      <div style="flex:1;min-width:240px">
+        <div style="font-family:var(--fh);font-size:20px;font-weight:900;margin-bottom:6px;background:linear-gradient(90deg,#a855f7,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">¿Listo para multiplicar tus ventas?</div>
+        <div style="font-size:14px;color:var(--t2);line-height:1.7">Con tu propia tienda online profesional tienes la vitrina abierta las 24 horas, los 7 días de la semana. Sin depender de nadie más.</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0">
+        <button onclick="freeWA()" class="btn btn-ok btn-lg">🎁 Probar 7 días gratis</button>
+        <a href="#planes" class="btn btn-ol btn-lg">💳 Ver planes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════ NUESTRAS TIENDAS ══════ -->
+<section class="sec" id="tiendas-sec" style="background:linear-gradient(180deg,var(--bg) 0%,rgba(255,102,0,.025) 50%,var(--bg) 100%)">
+  <div class="sec-in">
+    <div class="rv" style="text-align:center;margin-bottom:28px">
+      <div class="sec-tag" style="justify-content:center">🏪 Comunidad activa</div>
+      <h2 class="sec-h" style="text-align:center">Tiendas de Nuestros <span class="ft">Clientes</span></h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">Negocios reales funcionando con MiTienda Pro. Haz clic para visitarlos.</p>
+    </div>
+    <div id="store-cat-tabs" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px"></div>
+    <div id="stores-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px"></div>
+    <div id="stores-empty" class="hidden" style="text-align:center;padding:60px;color:var(--t3)"><div style="font-size:52px;margin-bottom:14px">🏪</div>Las primeras tiendas aparecerán aquí pronto</div>
+    <div style="text-align:center;margin-top:32px" class="rv">
+      <button onclick="openVendorModal()" class="btn btn-fire btn-lg">🏪 Registra tu Tienda Aquí</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TÉRMINOS Y CONDICIONES ══════ -->
+
+<!-- ══════ TESTIMONIOS CARRUSEL ══════ -->
+<section class="sec" id="testimonios-sec" style="background:linear-gradient(180deg,var(--bg) 0%,rgba(255,102,0,.018) 50%,var(--bg) 100%);overflow:hidden;padding:60px 0">
+  <div class="sec-in">
+    <div class="rv" style="text-align:center;margin-bottom:36px">
+      <div class="sec-tag" style="justify-content:center">⭐ Opiniones reales</div>
+      <h2 class="sec-h" style="text-align:center">Lo que dicen nuestros <span class="ft">Clientes</span></h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">Vendedores reales que ya cuentan con su tienda profesional.</p>
+    </div>
+    <div id="testi-empty-pub" style="text-align:center;padding:40px;color:var(--t3);display:none">
+      <div style="font-size:48px;margin-bottom:12px">⭐</div>
+      <p>Las primeras opiniones aparecerán aquí pronto.</p>
+    </div>
+    <!-- Carrusel -->
+    <div id="testi-carousel-wrap" style="position:relative;overflow:hidden">
+      <div id="testi-track" style="display:flex;gap:20px;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    </div>
+    <!-- Controles -->
+    <div id="testi-controls" style="display:flex;justify-content:center;align-items:center;gap:14px;margin-top:24px">
+      <button onclick="testiPrev()" style="width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--bdr);color:var(--o);font-size:20px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;flex-shrink:0">‹</button>
+      <div id="testi-dots" style="display:flex;gap:7px"></div>
+      <button onclick="testiNext()" style="width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--bdr);color:var(--o);font-size:20px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;flex-shrink:0">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tc-sec" style="background:var(--card);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:60px 0">
+  <div class="sec-in">
+    <div class="rv" style="text-align:center;margin-bottom:28px">
+      <div class="sec-tag" style="justify-content:center">📋 Legal</div>
+      <h2 class="sec-h" style="text-align:center">Términos y <span class="ft">Condiciones</span></h2>
+    </div>
+    <div class="rv" style="max-width:820px;margin:0 auto">
+      <div id="tc-pub-text" class="tc-block">Cargando términos...</div>
+      <div id="tc-pub-link" style="text-align:center;margin-top:16px"></div>
+      <div style="text-align:center;margin-top:14px">
+        <a href="#planes" class="btn btn-fire">💳 Ver Planes</a>
+        <button onclick="openVendorModal()" class="btn btn-ol" style="margin-left:10px">🏪 Registrarme</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="links-sec">
+  <div class="sec-in">
+    <div class="rv">
+      <div class="sec-tag">🔗 Explora</div>
+      <h2 class="sec-h">Mis <span class="ft">Proyectos</span></h2>
+      <p class="sec-sub">Visita mi tienda, mi canal, cursos y más.</p>
+    </div>
+    <div class="lnks-grid rv" id="links-grid"></div>
+  </div>
+</section>
+
+<!-- ══════ CONTACTO ══════ -->
+<div id="contacto" style="position:relative;overflow:hidden;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)">
+  <div id="ctc-bg" style="position:absolute;inset:0;z-index:0;overflow:hidden">
+    <div id="ctc-bg-img" style="position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:.35;transition:opacity .5s"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,8,8,.96) 0%,rgba(22,10,0,.89) 35%,rgba(255,102,0,.05) 65%,rgba(8,8,8,.93) 100%)"></div>
+    <div style="position:absolute;top:-50px;right:-50px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,102,0,.08),transparent 65%);pointer-events:none"></div>
+    <div style="position:absolute;bottom:-30px;left:-20px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,34,0,.06),transparent 65%);pointer-events:none"></div>
+  </div>
+  <div class="sec-in" style="position:relative;z-index:1;padding:60px 20px">
+    <div class="rv" style="text-align:center">
+      <div class="sec-tag" style="justify-content:center">📞 Contáctame</div>
+      <h2 class="sec-h" style="text-align:center">Escríbeme <span class="ft">Ahora</span></h2>
+      <p class="sec-sub" style="margin:0 auto">En menos de 24 horas tienes tu tienda funcionando.</p>
+    </div>
+    <div class="ccards-grid rv" id="contact-grid"></div>
+  </div>
+</div>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="flogo" id="flogo">🔥 MiTienda Pro</div>
+  <div class="fcred">Desarrollado por <strong style="color:var(--o)" id="fauthor">Edrian Cruz Down</strong> · Ing. en Informática</div>
+  <div class="fcopy" id="fcopy">© 2025 — Todos los derechos reservados · <a href="#tc-sec" style="color:var(--o)">Términos y Condiciones</a></div>
+</footer>
+
+</div><!-- /wrap -->
+
+<!-- ══════ MODAL LOGIN ADMIN ══════ -->
+<div id="m-alog" class="mov hidden">
+  <div class="mbox sm">
+    <div class="login-modal-inner">
+      <!-- Cabecera decorativa -->
+      <div class="login-modal-hdr">
+        <div class="lmh-rings">
+          <div class="lmr lmr1"></div><div class="lmr lmr2"></div><div class="lmr lmr3"></div>
+        </div>
+        <div class="lmh-icon">⚙️</div>
+        <button class="lmh-close" onclick="closeM('m-alog')">✕</button>
+      </div>
+      <div class="login-modal-body">
+        <div class="login-modal-title">Panel Administrador</div>
+        <div class="login-modal-sub">Acceso exclusivo para el administrador del sistema</div>
+        <!-- Campo contraseña estilizado -->
+        <div class="login-pass-wrap">
+          <div class="lpw-icon">🔑</div>
+          <input type="password" class="login-pass-inp" id="a-pass"
+            placeholder="Ingresa tu contraseña"
+            onkeydown="if(event.key==='Enter')doAdminLogin()"
+            onkeyup="checkCaps(event,'caps-login')"
+            onfocus="this.parentNode.classList.add('focus')"
+            onblur="this.parentNode.classList.remove('focus')"
+          >
+          <button class="lpw-eye" onclick="togglePassView()" id="eye-btn" title="Ver/ocultar">👁</button>
+        </div>
+        <div id="caps-login" class="caps-warn hidden">⇪ Bloq Mayús activado</div>
+        <div style="display:none"><!-- placeholder -->
+        </div>
+        <div id="a-err" class="login-err"></div>
+        <button class="btn-login-main" onclick="doAdminLogin()">
+          <span class="blm-icon">🔓</span>
+          <span>Acceder al Panel</span>
+          <span class="blm-arrow">→</span>
+        </button>
+        <div class="login-recover-link">
+          <button onclick="showRecoverPass()">¿Olvidaste tu contraseña?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ MODAL RECOVER PASS ══════ -->
+<div id="m-rec" class="mov hidden">
+  <div class="mbox sm">
+    <div class="mhd"><h3>🔑 Recuperar Contraseña</h3><button class="xbtn" onclick="closeM('m-rec')">✕</button></div>
+    <div class="mbdy">
+      <div class="rec-box">
+        <h3>Pregunta de seguridad</h3>
+        <p>Responde correctamente para ver tu contraseña actual.</p>
+        <div class="fg"><label class="lbl">¿Cuál es el nombre del desarrollador?</label><input type="text" class="inp" id="rec-ans" placeholder="Nombre y apellidos..." onkeydown="if(event.key==='Enter')checkRecover()"></div>
+        <button class="btn btn-fire btn-f" onclick="checkRecover()">Verificar</button>
+        <div id="rec-result" class="rec-answer" style="margin-top:14px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ ADMIN PANEL ══════ -->
+<div id="adm-panel" class="hidden">
+  <div class="adm-sb">
+    <div class="adm-lg">
+      <div class="adm-lg-main">⚙️ Administración</div>
+      <div class="adm-lg-sub">MiTienda Pro</div>
+    </div>
+    <nav class="adm-nav">
+      <button class="anv on" onclick="showAdmTab('dash',this)"><span class="ai">📊</span>Dashboard</button>
+      <button class="anv" onclick="showAdmTab('sellers',this)" id="nav-sellers"><span class="ai">👥</span>Vendedores<span class="nb hidden" id="sellers-nb">0</span></button>
+      <button class="anv" onclick="showAdmTab('stores',this)"><span class="ai">🏪</span>Tiendas</button>
+      <button class="anv" onclick="showAdmTab('notif',this)" id="nav-notif"><span class="ai">🔔</span>Notificaciones<span class="nb hidden" id="notif-nb">0</span></button>
+      <button class="anv" onclick="showAdmTab('planes',this)"><span class="ai">💳</span>Planes</button>
+      <button class="anv"    onclick="showAdmTab('free',this)"><span class="ai">🎁</span>Plan Free</button>
+      <button class="anv"    onclick="showAdmTab('avatar',this)"><span class="ai">🤖</span>Avatar</button>
+      <button class="anv"    onclick="showAdmTab('contacto',this)"><span class="ai">📞</span>Contacto</button>
+      <button class="anv"    onclick="showAdmTab('links',this)"><span class="ai">🔗</span>Links</button>
+      <button class="anv"    onclick="showAdmTab('textos',this)"><span class="ai">✏️</span>Textos</button>
+      <button class="anv"    onclick="showAdmTab('seguridad',this)"><span class="ai">🔑</span>Seguridad</button>
+      <button class="anv" onclick="showAdmTab('promo',this)"><span class="ai">📣</span>Promoción</button>
+      <button class="anv" onclick="showAdmTab('tc',this)"><span class="ai">📋</span>T&amp;C</button>
+      <button class="anv" onclick="showAdmTab('testimonials',this)"><span class="ai">⭐</span>Testimonios</button>
+      <button class="anv" onclick="showAdmTab('config2',this)"><span class="ai">⚙️</span>Avanzado</button>
+      <button class="anv" onclick="showAdmTab('exportar',this)"><span class="ai">📄</span>Exportar</button>
+    </nav>
+    <div class="adm-ft"><button class="btn btn-dk" style="width:100%;justify-content:center" onclick="openM('m-admin-exit')">🚪 Cerrar sesión</button></div>
+  </div>
+
+  <div class="adm-ct">
+
+    <!-- PLANES -->
+    <div id="atb-planes" class="atb">
+      <div class="tbar"><h2>💳 Configurar Planes</h2>
+        <div class="tbar-btns">
+          <button class="btn btn-dk btn-sm" onclick="addPlan()">+ Plan</button>
+          <button class="btn btn-fire" onclick="savePlans()">💾 Guardar</button>
+        </div>
+      </div>
+      <p style="color:var(--t2);font-size:13px;margin-bottom:16px">Edita nombre, duración, precio normal y con promoción. Puedes añadir o eliminar planes.</p>
+      <div style="font-size:11px;color:var(--t3);display:grid;grid-template-columns:36px 1fr 1fr 100px 100px 36px;gap:10px;padding:0 16px;margin-bottom:6px">
+        <span></span><span>NOMBRE</span><span>DURACIÓN</span><span>PRECIO CUP</span><span>CON PROMO</span><span></span>
+      </div>
+      <div class="plan-ed-list" id="plan-ed"></div>
+      <div style="margin-top:24px;background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:18px">
+        <h3 style="font-size:14px;font-weight:800;margin-bottom:14px">🏠 Precios de Propietario</h3>
+        <div class="fr">
+          <div class="fg"><label class="lbl">💻 Sistema Web (CUP)</label><input type="number" class="inp" id="own-w" style="margin:0"></div>
+          <div class="fg"><label class="lbl">🚀 Sistema + APK (CUP)</label><input type="number" class="inp" id="own-a" style="margin:0"></div>
+        </div>
+        <button class="btn btn-fire" style="margin-top:12px" onclick="saveOwner()">💾 Guardar Propietario</button>
+      </div>
+    </div>
+
+    <!-- PLAN FREE -->
+    <div id="atb-free" class="atb">
+      <div class="tbar"><h2>🎁 Configurar Plan Free</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:12px">📝 Descripción del plan gratis</h3>
+          <textarea class="inp" rows="4" id="free-desc-inp" placeholder="Descripción del plan gratuito..." style="margin:0"></textarea>
+          <button class="btn btn-fire btn-f" style="margin-top:10px" onclick="saveFreeConfig()">💾 Guardar</button>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:12px">✅ Características del plan gratis (una por línea)</h3>
+          <textarea class="inp" rows="7" id="free-feats-inp" placeholder="Sistema web completo&#10;APK Android incluida&#10;Panel de administración" style="margin:0"></textarea>
+          <button class="btn btn-fire btn-f" style="margin-top:10px" onclick="saveFreeConfig()">💾 Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVATAR -->
+    <div id="atb-avatar" class="atb">
+      <div class="tbar"><h2>🤖 Configurar Avatar</h2><button class="btn btn-fire" onclick="saveAvatar()">💾 Guardar Avatar</button></div>
+      <div class="ava-ed-preview">
+        <div id="ava-preview-mini" style="flex-shrink:0"></div>
+        <div style="flex:1">
+          <div class="fg"><label class="lbl">Nombre del Avatar</label><input type="text" class="inp" id="ava-name-inp" placeholder="TuAvatarBot" style="margin:0"></div>
+          <div class="fg" style="margin-top:10px"><label class="lbl">Foto del Avatar (URL o subir)</label>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+              <input type="text" class="inp" id="ava-img-url" placeholder="https://... (URL de imagen)" style="margin:0;flex:1" oninput="previewAvaImg()">
+              <label class="btn btn-dk btn-sm" style="cursor:pointer">📷 Subir<input type="file" accept="image/*" style="display:none" onchange="uploadAvaImg(event)"></label>
+              <button class="btn btn-dng btn-sm" onclick="clearAvaImg()">✕ Quitar</button>
+            </div>
+          </div>
+          <div class="fg" style="margin-top:10px"><label class="lbl">Color del avatar</label>
+            <div class="ava-ed-color-row" id="ava-colors">
+              <div class="color-opt" data-color="#ff6600,rgba(255,102,0,.3)" style="background:linear-gradient(135deg,#ff2200,#ff8800)" onclick="setAvaColor(this)"></div>
+              <div class="color-opt" data-color="#a855f7,rgba(168,85,247,.3)" style="background:linear-gradient(135deg,#7c3aed,#a855f7)" onclick="setAvaColor(this)"></div>
+              <div class="color-opt" data-color="#06b6d4,rgba(6,182,212,.3)" style="background:linear-gradient(135deg,#0284c7,#06b6d4)" onclick="setAvaColor(this)"></div>
+              <div class="color-opt" data-color="#22c55e,rgba(34,197,94,.3)" style="background:linear-gradient(135deg,#16a34a,#22c55e)" onclick="setAvaColor(this)"></div>
+              <div class="color-opt" data-color="#f59e0b,rgba(245,158,11,.3)" style="background:linear-gradient(135deg,#d97706,#fbbf24)" onclick="setAvaColor(this)"></div>
+              <div class="color-opt" data-color="#ec4899,rgba(236,72,153,.3)" style="background:linear-gradient(135deg,#db2777,#f472b6)" onclick="setAvaColor(this)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 style="font-size:13px;font-weight:800;margin-bottom:12px">💬 Mensajes del Avatar</h3>
+      <p style="font-size:12px;color:var(--t2);margin-bottom:14px">El avatar rota estos mensajes automáticamente cada 4 segundos.</p>
+      <div class="ava-ed-msgs" id="ava-msgs-ed"></div>
+      <button class="btn btn-dk btn-sm" style="margin-top:10px" onclick="addAvaMsg()">+ Agregar Mensaje</button>
+    </div>
+
+    <!-- CONTACTO -->
+    <div id="atb-contacto" class="atb">
+      <div class="tbar"><h2>📞 Formas de Contacto</h2>
+        <div class="tbar-btns">
+          <button class="btn btn-dk btn-sm" onclick="addContactRow()">+ Agregar</button>
+          <button class="btn btn-fire" onclick="saveContacts()">💾 Guardar</button>
+        </div>
+      </div>
+      <p style="color:var(--t2);font-size:13px;margin-bottom:16px">Agrega todas las formas de contacto que quieras: WhatsApp, Facebook, Email, Telegram, Instagram, etc.</p>
+      <div style="font-size:11px;color:var(--t3);display:grid;grid-template-columns:40px 1fr 1fr 1fr 36px;gap:10px;padding:0 14px;margin-bottom:6px">
+        <span>ICONO</span><span>TÍTULO</span><span>VALOR / URL</span><span>DESCRIPCIÓN</span><span></span>
+      </div>
+      <div class="con-ed-list" id="con-ed"></div>
+    </div>
+
+    <!-- LINKS -->
+    <div id="atb-links" class="atb">
+      <div class="tbar"><h2>🔗 Links y Botones</h2>
+        <div class="tbar-btns">
+          <button class="btn btn-dk btn-sm" onclick="addLinkRow()">+ Agregar</button>
+          <button class="btn btn-fire" onclick="saveLinks()">💾 Guardar</button>
+        </div>
+      </div>
+      <p style="color:var(--t2);font-size:13px;margin-bottom:14px">Botones de la sección "Mis Proyectos": tienda, canal, cursos, mapa, etc.</p>
+      <div style="font-size:11px;color:var(--t3);display:grid;grid-template-columns:44px 1fr 1fr 1fr 1fr 36px;gap:8px;padding:0 8px;margin-bottom:6px;flex-wrap:wrap">
+        <span>ICON</span><span>TÍTULO</span><span>SUBTÍTULO</span><span>URL</span><span>TEXTO BOTÓN</span><span></span>
+      </div>
+      <div id="lnk-ed"></div>
+    </div>
+
+    <!-- TEXTOS -->
+    <div id="atb-textos" class="atb">
+      <div class="tbar"><h2>✏️ Textos y Contenido</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:12px">🏷️ Nombre del Sistema</h3>
+          <input type="text" class="inp" id="cfg-sname" placeholder="MiTienda Pro">
+          <button class="btn btn-fire btn-f" onclick="saveCfg('sname')">💾 Guardar</button>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:12px">📝 Subtítulo Hero</h3>
+          <textarea class="inp" rows="3" id="cfg-sub" placeholder="Texto de la portada..."></textarea>
+          <button class="btn btn-fire btn-f" onclick="saveCfg('sub')">💾 Guardar</button>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:12px">👤 Nombre del Autor</h3>
+          <input type="text" class="inp" id="cfg-author" placeholder="Edrian Cruz Down">
+          <button class="btn btn-fire btn-f" onclick="saveCfg('author')">💾 Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEGURIDAD -->
+    <div id="atb-seguridad" class="atb">
+      <div class="tbar"><h2>🔑 Seguridad</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="background:var(--card);border:1px solid rgba(255,34,0,.3);border-radius:var(--rc);padding:22px">
+          <h3 style="font-size:14px;font-weight:800;margin-bottom:6px">Cambiar Contraseña Admin</h3>
+          <p style="color:var(--t2);font-size:13px;margin-bottom:16px">Mínimo 4 caracteres.</p>
+          <label class="lbl">Contraseña actual</label>
+          <div style="display:flex;gap:6px;margin-bottom:10px;align-items:center">
+            <input type="password" class="inp" id="old-p" placeholder="Contraseña actual" style="margin:0;flex:1" onkeyup="checkCaps(event,'caps-old')">
+            <button onclick="tvs('old-p',this)" style="background:var(--card2);border:1px solid var(--bdr);border-radius:var(--rb);padding:9px 12px;cursor:pointer;font-size:15px;color:var(--t2);transition:color .18s">👁</button>
+          </div>
+          <div id="caps-old" class="caps-warn hidden">⇪ Bloq Mayús activado</div>
+          <label class="lbl">Nueva contraseña</label>
+          <div style="display:flex;gap:6px;margin-bottom:10px;align-items:center">
+            <input type="password" class="inp" id="new-p" placeholder="Nueva contraseña" style="margin:0;flex:1" onkeyup="checkCaps(event,'caps-new')">
+            <button onclick="tvs('new-p',this)" style="background:var(--card2);border:1px solid var(--bdr);border-radius:var(--rb);padding:9px 12px;cursor:pointer;font-size:15px;color:var(--t2);transition:color .18s">👁</button>
+          </div>
+          <div id="caps-new" class="caps-warn hidden">⇪ Bloq Mayús activado</div>
+          <button class="btn btn-dng btn-f" onclick="changePass()">🔒 Cambiar Contraseña</button>
+          <div id="pmsg" style="font-size:12px;margin-top:8px;min-height:16px"></div>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(255,102,0,.25);border-radius:var(--rc);padding:22px">
+          <h3 style="font-size:14px;font-weight:800;color:var(--blue);margin-bottom:6px">🔑 Pregunta de Recuperación</h3>
+          <p style="color:var(--t2);font-size:13px;margin-bottom:16px">Configura la respuesta para recuperar tu contraseña si la olvidas. La pregunta es: <em>"¿Cuál es el nombre del desarrollador?"</em></p>
+          <label class="lbl">Respuesta secreta</label>
+          <input type="text" class="inp" id="rec-secret" placeholder="Ej: Edrian Cruz Down">
+          <button class="btn btn-ok btn-f" onclick="saveRecSecret()">💾 Guardar Respuesta</button>
+          <div id="rec-msg" style="font-size:12px;margin-top:8px;min-height:16px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPORTAR -->
+
+    <!-- ══ TESTIMONIOS ══ -->
+    <div id="atb-testimonials" class="atb">
+      <div class="tbar"><h2>⭐ Testimonios de Clientes</h2><button class="btn btn-fire btn-sm" onclick="openTestiModal(null)">+ Agregar</button></div>
+      <p style="color:var(--t2);font-size:13px;margin-bottom:16px">Gestiona las opiniones que aparecen en el carrusel de la portada.</p>
+      <div id="testi-adm-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px"></div>
+    </div>
+
+    <!-- ══ CONFIG AVANZADA ══ -->
+    <div id="atb-config2" class="atb">
+      <div class="tbar"><h2>⚙️ Configuración Avanzada</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:10px">🖼️ Icono del Sistema</h3>
+          <label class="lbl">URL del icono / favicon</label>
+          <input type="text" class="inp" id="c2-icon-url" placeholder="https://... (PNG,ICO,SVG)" oninput="previewSiteIcon(this.value)">
+          <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+            <label class="btn btn-dk btn-sm" style="cursor:pointer">📷 Subir<input type="file" accept="image/*" style="display:none" onchange="uploadSiteIcon(event)"></label>
+            <button class="btn btn-dng btn-sm" onclick="clearSiteIcon()">✕ Quitar</button>
+          </div>
+          <button class="btn btn-fire btn-sm btn-f" onclick="saveSiteIcon()">💾 Guardar Icono</button>
+          <div style="margin-top:10px;display:flex;align-items:center;gap:10px">
+            <img id="c2-icon-preview" src="" style="width:32px;height:32px;border-radius:6px;display:none;border:1px solid var(--bdr)">
+            <span id="c2-icon-lbl" style="font-size:12px;color:var(--t3)">Sin icono configurado</span>
+          </div>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(34,197,94,.3);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:8px">🛍️ URL de Mi Tienda Principal</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:12px;line-height:1.6">El botón de "Mi Tienda" en el header abrirá esta URL.</p>
+          <input type="text" class="inp" id="c2-shop-url" placeholder="https://... (tu tienda)">
+          <button class="btn btn-ok btn-sm btn-f" onclick="saveShopUrl()">💾 Guardar</button>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(168,85,247,.3);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:#c084fc;margin-bottom:8px">📄 Plantilla del Contrato</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:12px;line-height:1.6">Personaliza el texto del contrato que se genera para cada vendedor.</p>
+          <button class="btn btn-dk btn-f" onclick="openContractEditor()">✏️ Editar Plantilla</button>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(34,197,94,.3);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:8px">🌐 Auto-carga JSON desde URL</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:12px;line-height:1.6">Si hay una URL configurada, el sistema intentará cargar datos desde ella al iniciar. Ideal para GitHub Pages o servidores.</p>
+          <input type="text" class="inp" id="c2-json-url" placeholder="https://... /config.json">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-ok btn-sm" onclick="saveJsonUrl()">💾 Guardar URL</button>
+            <button class="btn btn-dk btn-sm" onclick="testJsonUrl()">🔍 Probar</button>
+          </div>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(255,34,0,.3);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--r);margin-bottom:10px">⚠️ Resetear Sistema</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.6">Elimina <strong>todos</strong> los datos del sistema: vendedores, tiendas, planes, testimonios, configuración, notificaciones. Esta acción requiere doble confirmación y <strong>no se puede deshacer</strong>.</p>
+          <button class="btn btn-dng btn-f" onclick="resetSystem()" style="width:100%;justify-content:center">⚠️ Resetear Todos los Datos</button>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:10px">📱 Responsive / Dispositivos</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:8px;line-height:1.6">El sistema está optimizado para todos los dispositivos. Si notas problemas de visualización, prueba:</p>
+          <ul style="font-size:12px;color:var(--t2);line-height:1.8;padding-left:16px">
+            <li>Mantener el archivo en una sola URL</li>
+            <li>Abrir en Chrome/Firefox actualizados</li>
+            <li>Usar escala del 100% en el navegador</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="atb-exportar" class="atb">
+      <div class="tbar"><h2>📄 Exportar Catálogo</h2></div>
+      <p style="color:var(--t2);font-size:13px;margin-bottom:22px">Genera el catálogo profesional con los precios y datos configurados actualmente.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px">
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:26px;text-align:center">
+          <div style="font-size:48px;margin-bottom:12px;filter:drop-shadow(0 0 10px rgba(255,102,0,.4))">📄</div>
+          <h3 style="font-family:var(--fh);font-size:17px;font-weight:900;margin-bottom:8px">Exportar PDF</h3>
+          <p style="color:var(--t2);font-size:12px;line-height:1.6;margin-bottom:18px">Catálogo profesional con portada negra, colores fuego, todos los planes y precios configurados.</p>
+          <button class="btn btn-fire btn-f" onclick="exportPDF()">📄 Generar PDF</button>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:26px;text-align:center">
+          <div style="font-size:48px;margin-bottom:12px;filter:drop-shadow(0 0 10px rgba(59,130,246,.4))">📝</div>
+          <h3 style="font-family:var(--fh);font-size:17px;font-weight:900;margin-bottom:8px">Exportar DOC</h3>
+          <p style="color:var(--t2);font-size:12px;line-height:1.6;margin-bottom:18px">Documento Word editable con todos los planes, precios y datos de contacto.</p>
+          <button class="btn btn-ol btn-f" onclick="exportDOC()">📝 Generar DOC</button>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(255,102,0,.3);border-radius:var(--rc);padding:22px">
+          <h3 style="font-family:var(--fh);font-size:14px;font-weight:900;margin-bottom:5px;color:var(--o)">🖼️ Imagen Fondo Contacto</h3>
+          <p style="color:var(--t2);font-size:12px;margin-bottom:12px;line-height:1.6">Imagen de fondo de la sección Contacto. Se combina con negro y naranja brillante.</p>
+          <label class="lbl">URL de imagen</label>
+          <input type="text" class="inp" id="cfg-ctc-img" placeholder="https://... (URL pública)" oninput="previewCtcBg(this.value)">
+          <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+            <label class="btn btn-dk btn-sm" style="cursor:pointer">📷 Subir<input type="file" accept="image/*" style="display:none" onchange="uploadCtcBg(event)"></label>
+            <button class="btn btn-dng btn-sm" onclick="clearCtcBg()">✕ Quitar</button>
+          </div>
+          <button class="btn btn-fire" style="width:100%;justify-content:center;padding:11px" onclick="saveCtcImg()">💾 Guardar imagen</button>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:26px;text-align:center">
+          <div style="font-size:48px;margin-bottom:12px;filter:drop-shadow(0 0 10px rgba(34,197,94,.4))">💾</div>
+          <h3 style="font-family:var(--fh);font-size:17px;font-weight:900;margin-bottom:8px">Backup Datos</h3>
+          <p style="color:var(--t2);font-size:12px;line-height:1.6;margin-bottom:18px">Exporta toda la configuración como JSON. Impórtala para restaurar en cualquier dispositivo.</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button class="btn btn-ok btn-f" onclick="openExportJSONModal()">⬇️ Exportar JSON</button>
+            <label class="btn btn-dk btn-f" style="cursor:pointer">⬆️ Importar JSON<input type="file" accept=".json" style="display:none" onchange="importJSON(event)"></label>
+          </div>
+        </div>
+      </div>
+      <div id="exp-status" style="margin-top:16px;font-size:13px;color:var(--t2)"></div>
+    </div>
+
+
+    <!-- DASHBOARD -->
+    <div id="atb-dash" class="atb show">
+      <div class="tbar"><h2>📊 Dashboard</h2><button class="btn btn-dk btn-sm" onclick="renderDash();toast('✅ Actualizado','s')">🔄 Actualizar</button><span id="dash-dt" style="font-size:12px;color:var(--t3)"></span></div>
+      <div class="adm-stat-grid" id="dash-stats"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;flex-wrap:wrap">
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:18px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:12px">📝 Últimos Registros</h3>
+          <div id="dash-recent-reg"></div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:18px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:12px">🔔 Notificaciones Recientes</h3>
+          <div id="dash-recent-notif"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENDEDORES -->
+    <div id="atb-sellers" class="atb">
+      <div class="tbar"><h2>👥 Vendedores Registrados</h2>
+        <div class="tbar-btns">
+          <button class="btn btn-fire btn-sm" onclick="openAddSellerModal()">+ Agregar Vendedor</button>
+          <input type="text" class="inp" id="sell-q" placeholder="🔍 Buscar..." oninput="renderSellers()" style="margin:0;width:180px">
+          <select class="inp" id="sell-sf" onchange="renderSellers()" style="margin:0;width:160px">
+            <option value="">Todos los estados</option>
+            <option value="pending">⏳ Pendiente</option>
+            <option value="active">✅ Activo</option>
+            <option value="inactive">❌ Inactivo</option>
+            <option value="registered">📋 Registrado</option>
+          </select>
+          <button class="btn btn-dng btn-sm" onclick="delAllSellers()">🗑 Eliminar todos</button>
+        </div>
+      </div>
+      <div style="overflow-x:auto;border-radius:var(--rc);border:1px solid var(--bdr)">
+        <table style="width:100%;border-collapse:collapse;min-width:640px">
+          <thead><tr style="background:var(--bg3)">
+            <th style="padding:11px 13px;text-align:left;font-size:11px;font-weight:800;color:var(--o);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--bdr)">Vendedor</th>
+            <th style="padding:11px 13px;text-align:left;font-size:11px;font-weight:800;color:var(--o);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--bdr)">Contacto</th>
+            <th style="padding:11px 13px;text-align:left;font-size:11px;font-weight:800;color:var(--o);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--bdr)">Tienda</th>
+            <th style="padding:11px 13px;text-align:left;font-size:11px;font-weight:800;color:var(--o);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--bdr)">Estado</th>
+            <th style="padding:11px 13px;text-align:left;font-size:11px;font-weight:800;color:var(--o);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--bdr)">Acciones</th>
+          </tr></thead>
+          <tbody id="sellers-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TIENDAS -->
+    <div id="atb-stores" class="atb">
+      <div class="tbar"><h2>🏪 Tiendas de Clientes</h2>
+        <div class="tbar-btns">
+          <span style="font-size:12px;color:var(--t2);font-weight:700">Visibles: <input type="number" class="inp" id="stores-vis-inp" min="1" max="50" value="6" oninput="S.promoConfig.storesVisible=+this.value;saveS();renderPublicStores()" style="margin:0;width:60px;display:inline;padding:5px 8px"></span>
+          <button class="btn btn-fire btn-sm" onclick="openStoreModal(null)">+ Agregar Tienda</button>
+        </div>
+      </div>
+      <!-- Búsqueda de tiendas -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-bottom:14px;padding:14px;background:var(--card);border-radius:var(--rc);border:1px solid var(--bdr)">
+        <input type="text" class="inp" id="st-search-q" placeholder="🔍 Nombre..." oninput="renderAdmStores()" style="margin:0">
+        <select class="inp" id="st-search-cat" onchange="renderAdmStores()" style="margin:0">
+          <option value="">Todas las categorías</option>
+          <option>Tecnología</option><option>Ropa</option><option>Alimentos</option>
+          <option>Servicios</option><option>Otros</option>
+        </select>
+        <select class="inp" id="st-search-vis" onchange="renderAdmStores()" style="margin:0">
+          <option value="">Visibilidad</option>
+          <option value="visible">✅ Visible</option>
+          <option value="hidden">🙈 Oculta</option>
+        </select>
+        <select class="inp" id="st-search-seller" onchange="renderAdmStores()" style="margin:0">
+          <option value="">Todos los vendedores</option>
+        </select>
+        <button class="btn btn-dk btn-sm" onclick="clearStoreFilters()" style="grid-column:1/-1">✕ Limpiar filtros</button>
+      </div>
+      <div id="adm-stores-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px"></div>
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div id="atb-notif" class="atb">
+      <div class="tbar"><h2>🔔 Notificaciones</h2>
+        <div class="tbar-btns">
+          <button class="btn btn-dk btn-sm" onclick="markAllRead()">✅ Todo leído</button>
+          <button class="btn btn-dng btn-sm" onclick="delAllNotif()">🗑 Eliminar todas</button>
+        </div>
+      </div>
+      <!-- Filtros avanzados -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-bottom:14px;padding:14px;background:var(--card);border-radius:var(--rc);border:1px solid var(--bdr)">
+        <input type="text" class="inp" id="nf-q" placeholder="🔍 Buscar nombre/tienda..." oninput="renderNotifAdm()" style="margin:0">
+        <input type="date" class="inp" id="nf-from" title="Desde" onchange="renderNotifAdm()" style="margin:0">
+        <input type="date" class="inp" id="nf-to" title="Hasta" onchange="renderNotifAdm()" style="margin:0">
+        <select class="inp" id="nf-type" onchange="renderNotifAdm()" style="margin:0">
+          <option value="">Todos los tipos</option>
+          <option value="🏪">🏪 Registros</option>
+          <option value="📋">📋 Estado</option>
+          <option value="🔔">🔔 Sistema</option>
+        </select>
+        <select class="inp" id="nf-sort" onchange="renderNotifAdm()" style="margin:0">
+          <option value="new">🕒 Más recientes</option>
+          <option value="old">🕰 Más antiguos</option>
+          <option value="unread">📍 No leídos primero</option>
+        </select>
+        <select class="inp" id="nf-read" onchange="renderNotifAdm()" style="margin:0">
+          <option value="">Todos</option>
+          <option value="unread">Sin leer</option>
+          <option value="read">Leídas</option>
+        </select>
+        <button class="btn btn-dk btn-sm" onclick="clearNotifFilters()" style="grid-column:1/-1">✕ Limpiar filtros</button>
+      </div>
+      <div id="notif-count" style="font-size:12px;color:var(--t3);margin-bottom:8px"></div>
+      <div id="notif-adm-list"></div>
+    </div>
+
+    <!-- PROMOCIÓN -->
+    <div id="atb-promo" class="atb">
+      <div class="tbar"><h2>📣 Gestión de Promoción</h2><button class="btn btn-fire" onclick="savePromoConf()">💾 Guardar Textos</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-bottom:20px">
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:12px">✏️ Textos de la Sección</h3>
+          <label class="lbl">Título</label><input type="text" class="inp" id="pconf-title" placeholder="Título de la sección">
+          <label class="lbl">Subtítulo</label><input type="text" class="inp" id="pconf-sub" placeholder="Subtítulo descriptivo">
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(34,197,94,.3);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--green);margin-bottom:8px">💰 Link Afiliados</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:12px;line-height:1.6">URL del sistema de afiliados. El botón "Ganar Dinero" llevará aquí.</p>
+          <input type="text" class="inp" id="pconf-aff" placeholder="https://... (tu sistema de afiliados)">
+          <button class="btn btn-ok btn-sm btn-f" onclick="saveAffUrl()" style="margin-top:0">💾 Guardar</button>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(255,34,0,.3);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--r);margin-bottom:8px">🔒 Seguridad del Sistema</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.6">Activa o desactiva la protección del código (clic derecho, F12, Ctrl+U).</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div id="sec-tog" onclick="toggleSecurity()" style="width:54px;height:28px;border-radius:14px;cursor:pointer;transition:background .3s;position:relative;user-select:none">
+              <div id="sec-knob" style="width:22px;height:22px;border-radius:50%;background:#fff;position:absolute;top:3px;left:3px;transition:transform .3s;box-shadow:0 2px 6px rgba(0,0,0,.4)"></div>
+            </div>
+            <span id="sec-lbl" style="font-size:13px;font-weight:800">...</span>
+          </div>
+        </div>
+      </div>
+      <!-- Links por canal REMOVED -->
+    </div>
+
+    <!-- TÉRMINOS Y CONDICIONES -->
+    <div id="atb-tc" class="atb">
+      <div class="tbar"><h2>📋 Términos y Condiciones</h2><button class="btn btn-fire" onclick="saveTCAdm()">💾 Guardar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:10px">🔗 Link Externo (opcional)</h3>
+          <input type="text" class="inp" id="tc-url-inp" placeholder="https://... (link al documento externo)">
+          <p style="font-size:11px;color:var(--t3)">Si hay URL, aparecerá un botón "Ver documento completo" en la sección pública.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--bdr);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--o);margin-bottom:10px">📄 Texto completo de T&amp;C</h3>
+          <textarea class="inp" id="tc-text-inp" rows="12" placeholder="Escribe aquí los términos y condiciones..."></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /adm-ct -->
+</div><!-- /adm-panel -->
+
+<!-- EXIT CONFIRM -->
+<div id="exit-dlg" class="hidden">
+  <div class="exit-fs">
+    <div class="ebg-rings">
+      <div class="er er1"></div><div class="er er2"></div>
+      <div class="er er3"></div><div class="er er4"></div>
+    </div>
+    <div class="exit-mega">
+      <div class="em-topbar"></div>
+      <div class="em-body">
+        <div class="em-ico-wrap"><div class="em-ico">🚪</div></div>
+        <div class="em-title">¿Salir de MiTienda Pro?</div>
+        <div class="em-sub">Tu información está guardada automáticamente. ¿Deseas cerrar la sesión?</div>
+        <div class="em-warn"><span style="font-size:20px">⚠️</span><span>Tu carrito y datos se conservarán para tu próxima visita</span></div>
+        <div class="em-btns">
+          <button class="em-stay" onclick="cancelExit()"><span>💙</span> Quedarme</button>
+          <button class="em-leave" onclick="confirmExit()">Salir ahora 🚪</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL REGISTRO VENDEDOR -->
+
+<!-- MODAL TESTIMONIO -->
+<div id="m-testi" class="mov hidden">
+  <div class="mbox md">
+    <div class="mhd"><h3 id="m-testi-ttl">⭐ Nueva Opinión</h3><button class="xbtn" onclick="closeM('m-testi')">✕</button></div>
+    <div class="mbdy">
+      <div class="fr">
+        <div class="fg"><label class="lbl">👤 Nombre del cliente *</label><input type="text" class="inp" id="ti-name" placeholder="Ej: María García" style="margin:0"></div>
+        <div class="fg"><label class="lbl">⭐ Calificación</label>
+          <select class="inp" id="ti-stars" style="margin:0">
+            <option value="5">⭐⭐⭐⭐⭐ — Excelente</option>
+            <option value="4">⭐⭐⭐⭐ — Muy bueno</option>
+            <option value="3">⭐⭐⭐ — Bueno</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">🏪 Nombre de su Tienda</label><input type="text" class="inp" id="ti-store" placeholder="Ej: TechStore Cuba" style="margin:0"></div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">💬 Opinión *</label><textarea class="inp" id="ti-text" rows="3" placeholder="Escribe la opinión del cliente aquí..." style="margin:0"></textarea></div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">🖼️ Foto del cliente (URL, opcional)</label><input type="text" class="inp" id="ti-img" placeholder="https://... " style="margin:0"></div>
+    </div>
+    <div class="mft">
+      <button class="btn btn-dk" onclick="closeM('m-testi')">Cancelar</button>
+      <button class="btn btn-fire" onclick="saveTesti()">💾 Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL EDITAR VENDEDOR -->
+<div id="m-seller-edit" class="mov hidden">
+  <div class="mbox md">
+    <div class="mhd"><h3>✏️ Editar Vendedor</h3><button class="xbtn" onclick="closeM('m-seller-edit')">✕</button></div>
+    <div class="mbdy">
+      <div class="fr">
+        <div class="fg"><label class="lbl">👤 Nombre *</label><input type="text" class="inp" id="se-fn" style="margin:0"></div>
+        <div class="fg"><label class="lbl">👤 Apellidos *</label><input type="text" class="inp" id="se-ln" style="margin:0"></div>
+      </div>
+      <div class="fr3" style="margin-top:12px">
+        <div class="fg"><label class="lbl">📱 Teléfono</label><input type="tel" class="inp" id="se-ph" style="margin:0"></div>
+        <div class="fg"><label class="lbl">💬 WhatsApp</label><input type="tel" class="inp" id="se-wa" placeholder="+53 5..." style="margin:0"></div>
+        <div class="fg"><label class="lbl">✉️ Email</label><input type="email" class="inp" id="se-em" style="margin:0"></div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">📍 Dirección</label><input type="text" class="inp" id="se-addr" style="margin:0"></div>
+      <div class="fr" style="margin-top:12px">
+        <div class="fg"><label class="lbl">🏪 Nombre de la Tienda</label><input type="text" class="inp" id="se-sn" style="margin:0"></div>
+        <div class="fg"><label class="lbl">🏷️ Categoría</label><select class="inp" id="se-cat" style="margin:0"><option>Tecnología</option><option>Ropa</option><option>Alimentos</option><option>Servicios</option><option>Otros</option></select></div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">📝 Descripción</label><textarea class="inp" id="se-desc" rows="2" style="margin:0"></textarea></div>
+      <div class="fg" style="margin-top:12px">
+        <label class="lbl">🔗 URL de la Tienda</label>
+        <div style="display:flex;gap:8px">
+          <input type="text" class="inp" id="se-url" placeholder="https://..." style="margin:0;flex:1">
+          <label class="lbl" style="margin:0;line-height:2.4;white-space:nowrap">Vincular tienda:</label>
+          <select class="inp" id="se-store-link" style="margin:0;flex:1" onchange="fillSellerUrlFromStore(this.value)">
+            <option value="">— Tienda registrada —</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="mft">
+      <button class="btn btn-dk" onclick="closeM('m-seller-edit')">Cancelar</button>
+      <button class="btn btn-fire" onclick="saveSellerEdit()">💾 Guardar Cambios</button>
+    </div>
+  </div>
+</div>
+<div id="m-vendor" class="mov hidden">
+  <div class="mbox md">
+    <div class="mhd"><h3>🏪 Registrarme como Vendedor</h3><button class="xbtn" onclick="closeM('m-vendor')">✕</button></div>
+    <div class="mbdy">
+      <div style="background:linear-gradient(135deg,rgba(255,102,0,.08),rgba(255,34,0,.04));border:1px solid rgba(255,102,0,.2);border-radius:var(--rb);padding:13px;margin-bottom:16px;font-size:13px;color:var(--t2)">
+        🔥 Completa el formulario. Recibirás respuesta en menos de 24 horas para activar tu tienda.
+      </div>
+      <div class="fr">
+        <div class="fg"><label class="lbl">👤 Nombre *</label><input type="text" class="inp" id="vr-fn" placeholder="Tu nombre" style="margin:0"></div>
+        <div class="fg"><label class="lbl">👤 Apellidos *</label><input type="text" class="inp" id="vr-ln" placeholder="Tus apellidos" style="margin:0"></div>
+      </div>
+      <div class="fr" style="margin-top:12px">
+        <div class="fg"><label class="lbl">📱 Teléfono *</label><input type="tel" class="inp" id="vr-ph" placeholder="+53 5..." style="margin:0"></div>
+        <div class="fg"><label class="lbl">✉️ Email</label><input type="email" class="inp" id="vr-em" placeholder="correo@email.com" style="margin:0"></div>
+      </div>
+      <div class="fr" style="margin-top:12px">
+        <div class="fg"><label class="lbl">📍 Dirección del negocio</label><input type="text" class="inp" id="vr-addr" placeholder="Ciudad, Provincia, País" style="margin:0"></div>
+        <div class="fg"><label class="lbl">🏷️ Categoría</label><select class="inp" id="vr-cat" style="margin:0"><option>Tecnología</option><option>Ropa</option><option>Alimentos</option><option>Servicios</option><option>Otros</option></select></div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">🏪 Nombre de tu Tienda *</label><input type="text" class="inp" id="vr-sn" placeholder="Nombre de tu tienda online" style="margin:0"></div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">📝 Descripción de tu negocio</label><textarea class="inp" id="vr-desc" rows="2" placeholder="Cuéntanos sobre tu negocio..." style="margin:0"></textarea></div>
+      <div style="background:rgba(255,102,0,.04);border:1px solid rgba(255,102,0,.12);border-radius:var(--rb);padding:10px;margin:12px 0;font-size:12px;color:var(--blue)">
+        ℹ️ La URL de tu tienda será asignada por el administrador tras aprobar tu solicitud.
+      </div>
+      <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:var(--t2)">
+        <input type="checkbox" id="vr-terms" style="margin-top:3px;accent-color:var(--o);flex-shrink:0">
+        <span>Acepto los <a href="#tc-sec" onclick="closeM('m-vendor')" style="color:var(--o);text-decoration:underline">Términos y Condiciones</a> de MiTienda Pro ✓</span>
+      </label>
+    </div>
+    <div class="mft">
+      <button class="btn btn-dk" onclick="closeM('m-vendor')">❌ Cancelar</button>
+      <button class="btn btn-fire" onclick="submitVendor()">📤 Enviar Solicitud</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DETALLE VENDEDOR -->
+<div id="m-sell-det" class="mov hidden">
+  <div class="mbox md">
+    <div class="mhd"><h3 id="m-sd-ttl">👤 Detalle</h3><button class="xbtn" onclick="closeM('m-sell-det')">✕</button></div>
+    <div class="mbdy" id="m-sd-body"></div>
+  </div>
+</div>
+
+<!-- MODAL TIENDA ADMIN -->
+<div id="m-store" class="mov hidden">
+  <div class="mbox md">
+    <div class="mhd"><h3 id="m-store-ttl">🏪 Nueva Tienda</h3><button class="xbtn" onclick="closeM('m-store')">✕</button></div>
+    <div class="mbdy">
+      <div class="fr">
+        <div class="fg"><label class="lbl">🏪 Nombre *</label><input type="text" class="inp" id="st-name" placeholder="Nombre de la tienda" style="margin:0"></div>
+        <div class="fg"><label class="lbl">🏷️ Categoría</label><select class="inp" id="st-cat" style="margin:0"><option>Tecnología</option><option>Ropa</option><option>Alimentos</option><option>Servicios</option><option>Otros</option></select></div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">🔗 URL de la Tienda *</label><input type="text" class="inp" id="st-url" placeholder="https://..." style="margin:0"></div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">📝 Descripción</label><textarea class="inp" id="st-desc" rows="2" placeholder="Describe la tienda..." style="margin:0"></textarea></div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">📍 Dirección de la Tienda</label><input type="text" class="inp" id="st-addr" placeholder="Ciudad, Provincia..." style="margin:0"></div>
+      <div class="fg" style="margin-top:12px">
+        <label class="lbl">👤 Vincular con Vendedor (auto-rellena datos)</label>
+        <select class="inp" id="st-seller" style="margin:0" onchange="autoFillStoreFromSeller(this.value)">
+          <option value="">— Sin vincular —</option>
+        </select>
+      </div>
+      <div class="fr" style="margin-top:12px">
+        <div class="fg"><label class="lbl">🖼️ Imagen/Logo (URL)</label><input type="text" class="inp" id="st-img" placeholder="https://... (opcional)" style="margin:0"></div>
+        <div class="fg"><label class="lbl">Visibilidad</label><select class="inp" id="st-vis" style="margin:0"><option value="visible">✅ Visible</option><option value="hidden">🙈 Oculta</option></select></div>
+      </div>
+    </div>
+    <div class="mft">
+      <button class="btn btn-dk" onclick="closeM('m-store')">Cancelar</button>
+      <button class="btn btn-fire" onclick="saveStore()">💾 Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN EXIT CONFIRM -->
+<div id="m-admin-exit" class="mov hidden">
+  <div class="mbox sm">
+    <div class="mhd"><h3>🚪 ¿Cerrar sesión Admin?</h3><button class="xbtn" onclick="closeM('m-admin-exit')">✕</button></div>
+    <div class="mbdy" style="text-align:center;padding:28px 20px">
+      <div style="font-size:52px;margin-bottom:14px;animation:logoPop 2s ease-in-out infinite alternate">🛡️</div>
+      <h3 style="font-family:var(--fh);font-size:20px;font-weight:900;margin-bottom:8px;background:var(--fire);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">¿Cerrar el panel admin?</h3>
+      <p style="color:var(--t2);font-size:14px;margin-bottom:24px;line-height:1.6">Todos los cambios están guardados automáticamente.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-dk" onclick="closeM('m-admin-exit')">💙 Seguir en Admin</button>
+        <button class="btn btn-fire" onclick="doAdminLogout()">🚪 Sí, cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL: CONFIRMAR ELEGANTE
+════════════════════════════════════════════════════════════ -->
+<div id="m-confirm" class="mov hidden">
+  <div class="mbox sm">
+    <div class="m-confirm-top"></div>
+    <div style="padding:32px 28px;text-align:center">
+      <span id="m-conf-ico" class="m-confirm-ico">⚠️</span>
+      <h3 id="m-conf-title" style="font-family:var(--fh);font-size:22px;font-weight:900;margin-bottom:10px;background:var(--fire);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">¿Confirmar?</h3>
+      <p id="m-conf-msg" style="font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:20px">Esta acción no se puede deshacer.</p>
+      <div id="m-conf-input-wrap" style="display:none;margin-bottom:18px">
+        <p id="m-conf-input-lbl" style="font-size:12px;color:var(--t3);margin-bottom:8px">Escribe el texto de confirmación:</p>
+        <input type="text" class="inp" id="m-conf-input" placeholder="" style="text-align:center;font-weight:800;letter-spacing:2px;margin:0">
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-dk" onclick="closeM('m-confirm')" id="m-conf-cancel">Cancelar</button>
+        <button class="btn btn-fire" id="m-conf-ok" onclick="execConfirm()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL: AGREGAR VENDEDOR (desde admin)
+════════════════════════════════════════════════════════════ -->
+<div id="m-add-seller" class="mov hidden">
+  <div class="mbox md">
+    <div class="mhd">
+      <h3>👤 Agregar Vendedor</h3>
+      <button class="xbtn" onclick="closeM('m-add-seller')">✕</button>
+    </div>
+    <div class="mbdy">
+      <div class="fr">
+        <div class="fg"><label class="lbl">👤 Nombre *</label><input type="text" class="inp" id="add-fn" placeholder="Nombre" style="margin:0"></div>
+        <div class="fg"><label class="lbl">👤 Apellidos *</label><input type="text" class="inp" id="add-ln" placeholder="Apellidos" style="margin:0"></div>
+      </div>
+      <div class="fr3" style="margin-top:12px">
+        <div class="fg"><label class="lbl">📱 Teléfono</label><input type="tel" class="inp" id="add-ph" placeholder="+53 5..." style="margin:0"></div>
+        <div class="fg"><label class="lbl">💬 WhatsApp</label><input type="tel" class="inp" id="add-wa" placeholder="+53 5..." style="margin:0"></div>
+        <div class="fg"><label class="lbl">✉️ Email</label><input type="email" class="inp" id="add-em" placeholder="correo@..." style="margin:0"></div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">📍 Dirección</label><input type="text" class="inp" id="add-addr" placeholder="Ciudad, Provincia, País" style="margin:0"></div>
+      <div class="fr" style="margin-top:12px">
+        <div class="fg"><label class="lbl">🏪 Nombre de la Tienda *</label><input type="text" class="inp" id="add-sn" placeholder="Nombre de la tienda" style="margin:0"></div>
+        <div class="fg"><label class="lbl">🏷️ Categoría</label>
+          <select class="inp" id="add-cat" style="margin:0">
+            <option>Tecnología</option><option>Ropa</option><option>Alimentos</option><option>Servicios</option><option>Otros</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">📝 Descripción</label><textarea class="inp" id="add-desc" rows="2" placeholder="Descripción del negocio..." style="margin:0"></textarea></div>
+      <div class="fg" style="margin-top:12px">
+        <label class="lbl">🔗 URL de la Tienda</label>
+        <div style="display:flex;gap:8px">
+          <input type="text" class="inp" id="add-url" placeholder="https://..." style="margin:0;flex:1">
+          <select class="inp" id="add-store-link" style="margin:0;width:180px" onchange="if(this.value)setVal('add-url',this.value)" title="Vincular con tienda registrada">
+            <option value="">← Tienda registrada</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg" style="margin-top:12px"><label class="lbl">Estado</label>
+        <select class="inp" id="add-status" style="margin:0">
+          <option value="registered">📋 Registrado</option>
+          <option value="active">✅ Activo</option>
+          <option value="pending">⏳ Pendiente</option>
+          <option value="inactive">❌ Inactivo</option>
+        </select>
+      </div>
+    </div>
+    <div class="mft">
+      <button class="btn btn-dk" onclick="closeM('m-add-seller')">Cancelar</button>
+      <button class="btn btn-fire" onclick="saveNewSeller()">💾 Agregar Vendedor</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL: EDITOR DE CONTRATO
+════════════════════════════════════════════════════════════ -->
+<div id="m-contract-editor" class="mov hidden">
+  <div class="mbox lg">
+    <div class="mhd">
+      <h3>📄 Plantilla de Contrato</h3>
+      <button class="xbtn" onclick="closeM('m-contract-editor')">✕</button>
+    </div>
+    <div class="mbdy">
+      <div style="background:rgba(255,102,0,.06);border:1px solid rgba(255,102,0,.2);border-radius:var(--rb);padding:12px;margin-bottom:16px;font-size:13px;color:var(--t2);line-height:1.6">
+        💡 Variables disponibles: <code style="color:var(--o)">{nombre}</code>, <code style="color:var(--o)">{tienda}</code>, <code style="color:var(--o)">{fecha}</code>, <code style="color:var(--o)">{url}</code>, <code style="color:var(--o)">{cat}</code>, <code style="color:var(--o)">{telefono}</code>
+      </div>
+      <div class="fg"><label class="lbl">Objeto del Contrato</label><textarea class="inp" id="ce-objeto" rows="4" placeholder="El Proveedor se compromete a..."></textarea></div>
+      <div class="fr">
+        <div class="fg"><label class="lbl">Obligaciones del Proveedor</label><textarea class="inp" id="ce-obl-prov" rows="4" placeholder="Obligaciones del proveedor..."></textarea></div>
+        <div class="fg"><label class="lbl">Obligaciones del Vendedor</label><textarea class="inp" id="ce-obl-vend" rows="4" placeholder="Obligaciones del vendedor..."></textarea></div>
+      </div>
+      <div class="fg"><label class="lbl">Cláusulas Adicionales</label><textarea class="inp" id="ce-clausulas" rows="3" placeholder="Cláusulas especiales del contrato..."></textarea></div>
+      <div class="fg"><label class="lbl">Nota al Pie</label><textarea class="inp" id="ce-footer-note" rows="2" placeholder="Nota adicional al final del contrato..."></textarea></div>
+    </div>
+    <div class="mft">
+      <button class="btn btn-dk" onclick="closeM('m-contract-editor')">Cancelar</button>
+      <button class="btn btn-fire" onclick="saveContractTemplate()">💾 Guardar Plantilla</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL: EXPORTAR JSON
+════════════════════════════════════════════════════════════ -->
+<div id="m-export-json" class="mov hidden">
+  <div class="mbox sm">
+    <div class="mhd"><h3>💾 Exportar Datos</h3><button class="xbtn" onclick="closeM('m-export-json')">✕</button></div>
+    <div class="mbdy">
+      <div class="fg"><label class="lbl">📝 Nombre del archivo</label>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="text" class="inp" id="ej-name" placeholder="backup_mtp" style="margin:0;flex:1">
+          <span style="font-size:13px;color:var(--t2);flex-shrink:0;font-weight:700">.json</span>
+        </div>
+      </div>
+      <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:var(--rb);padding:12px;font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.6">
+        ✅ Las imágenes en base64 se excluyen automáticamente para mantener el archivo liviano y compatible con servidores/GitHub.
+      </div>
+    </div>
+    <div class="mft">
+      <button class="btn btn-dk" onclick="closeM('m-export-json')">Cancelar</button>
+      <button class="btn btn-fire" onclick="doExportJSON()">⬇️ Descargar</button>
+    </div>
+  </div>
+</div>
+
+<div id="toaster"></div>
+  <script src="./js/sync-hook.js"></script>
+  <script src="./js/main.js"></script>
+  <script defer src="admin-menu.js"></script>
+
+<!-- ══════ MTP PWA + GitHub layer (no toca diseño/funcionalidad) ══════ -->
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#ff6600">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<script type="module" src="./lib/bootstrap.js"></script>
+</body>
+</html>
