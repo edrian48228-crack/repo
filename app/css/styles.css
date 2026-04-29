@@ -980,3 +980,8 @@ footer{padding:34px 20px;text-align:center;border-top:1px solid var(--bdr)}
   .fr3{grid-template-columns:1fr}
   .ped-row{grid-template-columns:1fr 1fr}
 }
+
+/* Ocultar menú móvil duplicado en desktop */
+@media (min-width: 901px) {
+  .mtp-mobile-links { display: none !important; }
+}
