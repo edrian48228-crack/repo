@@ -95,11 +95,12 @@ function build() {
         await GitHub.setConfig({ owner: $("#cfg-owner").value, repo: $("#cfg-repo").value, branch: $("#cfg-branch").value });
         const tok = $("#cfg-token").value.trim();
         const pass = getPass();
-        if (tok && pass) {
-          await GitHub.saveToken(tok, pass);
-          window.__MTP_PASS__ = pass;
-          try { sessionStorage.setItem("__MTP_PASS__", pass); } catch {}
-        }
+    if (tok && pass) { 
+        await GitHub.saveToken(tok, pass); 
+        window.__MTP_PASS__ = pass; 
+      localStorage.setItem("gh_passphrase", pass); 
+    }
+        
         log("✓ Config guardada.");
         try { if (window.MTP?.GhSync) { await window.MTP.GhSync.pushNow(); log("✓ state.json publicado."); } }
         catch (e) { log("✗ push inicial: " + e.message); }
@@ -246,11 +247,12 @@ function buildInlineGithubCard() {
       });
       const tok = $("#ghc-token").value.trim();
       const pass = getPass();
-      if (tok && pass) {
-        await GitHub.saveToken(tok, pass);
-        window.__MTP_PASS__ = pass;
-        try { sessionStorage.setItem("__MTP_PASS__", pass); } catch {}
-      }
+    if (tok && pass) { 
+      await GitHub.saveToken(tok, pass); 
+      window.__MTP_PASS__ = pass; 
+      localStorage.setItem("gh_passphrase", pass); 
+    }
+      
       log("✓ Configuración y token guardados (encriptados).");
       log("→ Forzando primer push del estado a state.json...");
       try {
