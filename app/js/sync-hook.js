@@ -24,9 +24,10 @@
       r.onerror   = () => rej(r.error);
     });
   }
-  async function dbGet(store, key) {
+async function dbGet(store, key) {
     try {
       const db = await openDB();
+      if (!db.objectStoreNames.contains(store)) return null;
       return new Promise((res) => {
         const r = db.transaction(store).objectStore(store).get(key);
         r.onsuccess = () => res(r.result?.value ?? null);
