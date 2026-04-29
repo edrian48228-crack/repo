@@ -17,13 +17,28 @@
   let pulled     = false;
 
   /* ── IndexedDB ── */
-  function openDB() {
+
+function openDB() {
     return new Promise((res, rej) => {
       const r = indexedDB.open(DB_NAME, 1);
       r.onsuccess = () => res(r.result);
       r.onerror   = () => rej(r.error);
+      r.onupgradeneeded = (e) => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains("config"))
+          db.createObjectStore("config", { keyPath: "key" });
+        if (!db.objectStoreNames.contains("cache"))
+          db.createObjectStore("cache", { keyPath: "path" });
+        if (!db.objectStoreNames.contains("queue"))
+          db.createObjectStore("queue", { keyPath: "id", autoIncrement: true });
+        if (!db.objectStoreNames.contains("logs"))
+          db.createObjectStore("logs", { keyPath: "id", autoIncrement: true });
+        if (!db.objectStoreNames.contains("backups"))
+          db.createObjectStore("backups", { keyPath: "id", autoIncrement: true });
+      };
     });
   }
+  
 async function dbGet(store, key) {
     try {
       const db = await openDB();
