@@ -985,3 +985,16 @@ footer{padding:34px 20px;text-align:center;border-top:1px solid var(--bdr)}
 @media (min-width: 901px) {
   .mtp-mobile-links { display: none !important; }
 }
+/* Acortar botones del header en pantallas medianas */
+@media (max-width: 1200px) {
+  .btn-reg-sell { font-size: 11px !important; padding: 6px 8px !important; }
+}
+@media (max-width: 1024px) {
+  .btn-reg-sell span, .btn-reg-sell { 
+    font-size: 0 !important; 
+  }
+  .btn-reg-sell::after { 
+    content: '🏪'; 
+    font-size: 16px !important; 
+  }
+}
