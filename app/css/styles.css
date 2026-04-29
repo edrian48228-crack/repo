@@ -990,11 +990,13 @@ footer{padding:34px 20px;text-align:center;border-top:1px solid var(--bdr)}
   .btn-reg-sell { font-size: 11px !important; padding: 6px 8px !important; }
 }
 @media (max-width: 1024px) {
-  .btn-reg-sell span, .btn-reg-sell { 
-    font-size: 0 !important; 
+  .btn-reg-sell { 
+    font-size: 0 !important;
+    padding: 8px 10px !important;
+    min-width: 36px;
   }
-  .btn-reg-sell::after { 
+  .btn-reg-sell::before { 
     content: '🏪'; 
-    font-size: 16px !important; 
+    font-size: 18px;
   }
 }
