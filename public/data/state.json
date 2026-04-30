@@ -156,7 +156,7 @@
   ],
   "avatar": {
     "name": "TiendaBot",
-    "img": "../public/img/avatar-1777521830778.webp",
+    "img": "../public/img/avatar-1777521926573.webp",
     "color": "#ff6600",
     "colorFade": "rgba(255,102,0,.3)",
     "gradient": "linear-gradient(135deg,#ff2200 0%,#ff6600 50%,#ff8800 100%)",
@@ -287,5 +287,5 @@
   },
   "promoActive": false,
   "exitTarget": null,
-  "__ts": 1777521934610
+  "__ts": 1777521996266
 }
