@@ -759,6 +759,16 @@
           </div>
         </div>
         <div style="background:var(--card);border:1px solid rgba(255,34,0,.3);border-radius:var(--rc);padding:20px">
+          <h3 style="font-size:13px;font-weight:800;color:var(--r);margin-bottom:8px">🔒 Seguridad del Sistema</h3>
+          <p style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.6">Activa o desactiva la protección del código (clic derecho, F12, Ctrl+U).</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div id="sec-tog" onclick="toggleSecurity()" style="width:54px;height:28px;border-radius:14px;cursor:pointer;transition:background .3s;position:relative;user-select:none">
+              <div id="sec-knob" style="width:22px;height:22px;border-radius:50%;background:#fff;position:absolute;top:3px;left:3px;transition:transform .3s;box-shadow:0 2px 6px rgba(0,0,0,.4)"></div>
+            </div>
+            <span id="sec-lbl" style="font-size:13px;font-weight:800">...</span>
+          </div>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(255,34,0,.3);border-radius:var(--rc);padding:20px">
           <h3 style="font-size:13px;font-weight:800;color:var(--r);margin-bottom:10px">⚠️ Resetear Sistema</h3>
           <p style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.6">Elimina <strong>todos</strong> los datos del sistema: vendedores, tiendas, planes, testimonios, configuración, notificaciones. Esta acción requiere doble confirmación y <strong>no se puede deshacer</strong>.</p>
           <button class="btn btn-dng btn-f" onclick="resetSystem()" style="width:100%;justify-content:center">⚠️ Resetear Todos los Datos</button>
@@ -941,16 +951,7 @@
           <input type="text" class="inp" id="pconf-aff" placeholder="https://... (tu sistema de afiliados)">
           <button class="btn btn-ok btn-sm btn-f" onclick="saveAffUrl()" style="margin-top:0">💾 Guardar</button>
         </div>
-        <div style="background:var(--card);border:1px solid rgba(255,34,0,.3);border-radius:var(--rc);padding:20px">
-          <h3 style="font-size:13px;font-weight:800;color:var(--r);margin-bottom:8px">🔒 Seguridad del Sistema</h3>
-          <p style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.6">Activa o desactiva la protección del código (clic derecho, F12, Ctrl+U).</p>
-          <div style="display:flex;align-items:center;gap:12px">
-            <div id="sec-tog" onclick="toggleSecurity()" style="width:54px;height:28px;border-radius:14px;cursor:pointer;transition:background .3s;position:relative;user-select:none">
-              <div id="sec-knob" style="width:22px;height:22px;border-radius:50%;background:#fff;position:absolute;top:3px;left:3px;transition:transform .3s;box-shadow:0 2px 6px rgba(0,0,0,.4)"></div>
-            </div>
-            <span id="sec-lbl" style="font-size:13px;font-weight:800">...</span>
-          </div>
-        </div>
+
       </div>
       <!-- Links por canal REMOVED -->
     </div>
