@@ -43,6 +43,11 @@
         header#hdr .hdr-right > a,header#hdr .hdr-right > button{display:none}
         header#hdr .hdr-right .mtp-burger{display:inline-flex}
       }
+      @media (min-width:${BREAK + 1}px){
+        header#hdr .hnav-wrap{display:flex!important}
+        header#hdr .hdr-right > a,header#hdr .hdr-right > button:not(.mtp-burger){display:inline-flex!important}
+        .mtp-burger{display:none!important}
+      }
       body.mtp-no-scroll{overflow:hidden}
     `;
     const el = document.createElement("style");
