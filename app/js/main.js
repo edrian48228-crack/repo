@@ -1978,6 +1978,11 @@ function saveShopUrl() {
 function applyShopButton() {
   const btn = document.getElementById('btn-goto-shop');
   if (btn) btn.style.display = S.shopUrl ? 'inline-flex' : 'none';
+  // Hero button
+  const heroWrap = document.getElementById('hero-shop-btn-wrap');
+  const heroLbl = document.getElementById('hero-shop-btn-lbl');
+  if (heroWrap) heroWrap.style.display = S.shopUrl ? 'block' : 'none';
+  if (heroLbl && S.config && S.config.systemName) heroLbl.textContent = '🛍️ ' + S.config.systemName;
 }
 
 // ────────────────────────────────────────────────
