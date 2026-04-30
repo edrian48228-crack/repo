@@ -17,6 +17,30 @@ export const Writer = {
     return this._writeOrQueue({ path, content: bytes, message: message || `img: upload ${relPath}`, passphrase, kind: "image" });
   },
 
+  /** Elimina una imagen vieja del repo dado su URL relativa o nombre de archivo. */
+  async deleteImage(imgUrlOrName, { passphrase } = {}) {
+    if (!imgUrlOrName) return;
+    const name = imgUrlOrName.split("/").pop();
+    if (!name || !name.includes(".")) return;
+    const path = "public/img/" + name;
+    const pass = passphrase || (typeof window !== "undefined" ? window.__MTP_PASS__ : null);
+    try {
+      const cfg = await GitHub.getConfig();
+      if (!cfg.owner || !cfg.repo || !cfg.tokenEnc || !pass) return;
+      const token = await GitHub.getToken(pass);
+      const existing = await GitHub.getContent({ ...cfg, path, token });
+      if (!existing || !existing.sha) return;
+      await GitHub.request(`/repos/${cfg.owner}/${cfg.repo}/contents/${encodeURI(path)}`, {
+        method: "DELETE",
+        token,
+        body: { message: `img: delete old ${name}`, sha: existing.sha, branch: cfg.branch },
+      });
+      await DB.log("ok", "deleteImage", { path });
+    } catch (err) {
+      await DB.log("warn", "deleteImage fail (ignorado)", { path, err: String(err) });
+    }
+  },
+
   async _writeOrQueue({ path, content, message, passphrase, kind }) {
     if (!navigator.onLine) {
       await DB.enqueue({ kind, path, content: await serialize(content), message });
