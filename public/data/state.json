@@ -122,14 +122,14 @@
       "icon": "🛍️",
       "title": "Ver Mi Tienda",
       "sub": "Tienda online funcionando",
-      "url": "#",
+      "url": "https://github.com/edrian48228-crack/repotienda",
       "arrow": "Visitar tienda"
     },
     {
       "icon": "📺",
       "title": "Canal Electrónica",
       "sub": "Tutoriales y proyectos",
-      "url": "#",
+      "url": "https://youtube.com/@crackschematics",
       "arrow": "Ver canal"
     },
     {
@@ -169,6 +169,8 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
+  "promoActive": false,
+  "exitTarget": null,
   "sellers": [
     {
       "id": "v1776947358756",
@@ -285,7 +287,5 @@
   "shopUrl": "",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777635849102,
-  "promoActive": false,
-  "exitTarget": null
+  "__ts": 1777635892303
 }
