@@ -129,7 +129,7 @@
       "icon": "📺",
       "title": "Canal Electrónica",
       "sub": "Tutoriales y proyectos",
-      "url": "#",
+      "url": "https://github.com/edrian48228-crack/repotienda",
       "arrow": "Ver canal"
     },
     {
@@ -287,5 +287,5 @@
   "shopUrl": "",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777523062001
+  "__ts": 1777635849337
 }
