@@ -1964,9 +1964,8 @@ function saveShopUrl() {
 }
 
 function applyShopButton() {
-  // header btn removed — now using floating button
   const floatWrap = document.getElementById('float-shop-wrap');
-  const floatLbl = document.getElementById('float-shop-lbl');
+  const floatLbl  = document.getElementById('float-shop-lbl');
   if (floatWrap) floatWrap.style.display = S.shopUrl ? 'block' : 'none';
   if (floatLbl) {
     const name = (S.config && S.config.systemName) ? S.config.systemName : 'Mi Tienda';

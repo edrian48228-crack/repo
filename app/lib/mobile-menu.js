@@ -42,10 +42,10 @@
         header#hdr .hdr-right > a:not(.mtp-burger),header#hdr .hdr-right > button:not(.mtp-burger){display:none!important}
         header#hdr .hdr-right{gap:6px}
       }
-      @media (min-width:${BREAK + 1}px){
+      @media (min-width:${BREAK}px){
         .mtp-burger{display:none!important}
         header#hdr .hnav-wrap{display:flex!important}
-        header#hdr .hdr-right > a,header#hdr .hdr-right > button{display:inline-flex!important}
+        header#hdr .hdr-right > a,header#hdr .hdr-right > button:not(.mtp-burger){display:inline-flex!important}
       }
       body.mtp-no-scroll{overflow:hidden}
     `;
