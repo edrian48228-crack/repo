@@ -169,10 +169,10 @@ select.inp option{background:var(--card)}
 #hdr{position:sticky;top:0;z-index:200;
   background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)}
 .hdr-in{max-width:1240px;margin:0 auto;
-  display:flex;align-items:center;gap:12px;padding:0 20px;height:60px;flex-wrap:nowrap}
-#hdr-logo{font-family:var(--fh);font-size:19px;font-weight:900;white-space:nowrap;flex-shrink:0;
+  display:flex;align-items:center;gap:12px;padding:0 20px;height:60px;flex-wrap:wrap}
+#hdr-logo{font-family:var(--fh);font-size:19px;font-weight:900;white-space:nowrap;flex-shrink:0;max-width:180px;overflow:hidden;
   background:var(--fire);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hnav-wrap{display:flex;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none;justify-content:center;align-items:center;padding:0 8px}
+.hnav-wrap{display:flex;gap:2px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;justify-content:flex-start;;align-items:center;padding:0 8px}
 .hnav-wrap::-webkit-scrollbar{display:none}
 .hnav{background:transparent;border:1px solid transparent;border-radius:20px;padding:6px 13px;
   color:var(--t2);font-family:var(--fh);font-size:12.5px;font-weight:800;
@@ -217,7 +217,6 @@ select.inp option{background:var(--card)}
 .hnav-free:hover{box-shadow:0 0 22px rgba(255,102,0,.5)!important}
 @keyframes freeGlow{from{box-shadow:0 0 5px rgba(255,102,0,.2)}to{box-shadow:0 0 18px rgba(255,102,0,.6)}}
 .btn-reg-sell{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#ff2200,#ff6600,#ff8800);border:none;border-radius:22px;padding:9px 18px;cursor:pointer;font-family:var(--fh);font-size:12px;font-weight:900;color:#fff;box-shadow:0 4px 18px rgba(255,102,0,.45);animation:regPulse 2.5s ease-in-out infinite alternate;transition:all .2s;white-space:nowrap}
-.btn-reg-sell .reg-sell-txt{display:inline}
 .btn-reg-sell:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,102,0,.7)}
 @keyframes regPulse{from{box-shadow:0 4px 14px rgba(255,102,0,.4)}to{box-shadow:0 4px 28px rgba(255,102,0,.8),0 0 45px rgba(255,34,0,.2)}}
 .btn-free-hero{background:linear-gradient(135deg,#ff2200,#ff6600,#ff8800)!important;color:#fff!important;box-shadow:0 6px 24px rgba(255,102,0,.55)!important;animation:heroFP 2s ease-in-out infinite alternate;font-size:15px!important;padding:14px 28px!important}
@@ -733,14 +732,6 @@ select.inp option{background:var(--card)}
   .float-ava-wrap{bottom:16px;right:16px}
   .float-ava-bubble{max-width:220px;min-width:180px}
 }
-/* Boton flotante Mi Tienda: en movil va a la izquierda para no chocar con el avatar */
-@media(max-width:720px){
-  #float-shop-wrap{
-    right:auto!important;
-    left:16px!important;
-    bottom:calc(80px + env(safe-area-inset-bottom,0px))!important;
-  }
-}
 .promo-strat-card{
   background:var(--clr-b,rgba(255,102,0,.1));border:1px solid color-mix(in srgb,var(--clr,#ff6600) 30%,transparent);
   border-radius:16px;padding:22px 18px;transition:all .25s;position:relative;overflow:hidden;
@@ -988,4 +979,24 @@ footer{padding:34px 20px;text-align:center;border-top:1px solid var(--bdr)}
   .own-card{padding:24px 18px}
   .fr3{grid-template-columns:1fr}
   .ped-row{grid-template-columns:1fr 1fr}
+}
+
+/* Ocultar menú móvil duplicado en desktop */
+@media (min-width: 901px) {
+  .mtp-mobile-links { display: none !important; }
+}
+/* Acortar botones del header en pantallas medianas */
+@media (max-width: 1200px) {
+  .btn-reg-sell { font-size: 11px !important; padding: 6px 8px !important; }
+}
+@media (max-width: 1024px) {
+  .btn-reg-sell { 
+    font-size: 0 !important;
+    padding: 8px 10px !important;
+    min-width: 36px;
+  }
+  .btn-reg-sell::before { 
+    content: '🏪'; 
+    font-size: 18px;
+  }
 }
