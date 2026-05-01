@@ -37,11 +37,15 @@
         display:flex;flex-direction:column;gap:8px}
       .mtp-mobile-actions button,.mtp-mobile-actions a{width:100%;text-align:center}
       @media (max-width:${BREAK}px){
-        .mtp-burger{display:inline-flex}
+        .mtp-burger{display:inline-flex!important}
         header#hdr .hnav-wrap{display:none!important}
+        header#hdr .hdr-right > a:not(.mtp-burger),header#hdr .hdr-right > button:not(.mtp-burger){display:none!important}
         header#hdr .hdr-right{gap:6px}
-        header#hdr .hdr-right > a,header#hdr .hdr-right > button{display:none}
-        header#hdr .hdr-right .mtp-burger{display:inline-flex}
+      }
+      @media (min-width:${BREAK + 1}px){
+        .mtp-burger{display:none!important}
+        header#hdr .hnav-wrap{display:flex!important}
+        header#hdr .hdr-right > a,header#hdr .hdr-right > button{display:inline-flex!important}
       }
       body.mtp-no-scroll{overflow:hidden}
     `;
