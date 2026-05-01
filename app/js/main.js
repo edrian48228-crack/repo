@@ -647,11 +647,7 @@ function previewAvaImg() {
 async function uploadAvaImg(e) {
   const file = e.target.files[0]; if (!file) return;
   try {
-    const oldImg = S.avatar.img || '';
     const imgUrl = await uploadRepoImage(file, 'avatar', { maxW: 320, maxH: 320, quality: 0.82, thumbW: 160, thumbH: 160, thumbQ: 0.72 });
-    if (oldImg && oldImg.includes('/public/img/') && window.MTP?.Writer) {
-      window.MTP.Writer.deleteImage(oldImg).catch(() => {});
-    }
     S.avatar.img = imgUrl;
     const url = get('ava-img-url'); if (url) url.value = imgUrl;
     const pm = get('ava-preview-mini');
@@ -1254,11 +1250,7 @@ function previewCtcBg(url){const el=get('ctc-bg-img');if(el)el.style.backgroundI
 async function uploadCtcBg(e){
   const f=e.target.files[0]; if(!f) return;
   try {
-    const oldImg = S.config.ctcImg || '';
     const imgUrl = await uploadRepoImage(f, 'contacto-bg', { maxW: 1600, maxH: 1200, quality: 0.84, thumbW: 320, thumbH: 240, thumbQ: 0.7 });
-    if (oldImg && oldImg.includes('/public/img/') && window.MTP?.Writer) {
-      window.MTP.Writer.deleteImage(oldImg).catch(() => {});
-    }
     S.config.ctcImg = imgUrl;
     previewCtcBg(S.config.ctcImg);
     saveS();
@@ -1902,11 +1894,7 @@ function previewSiteIcon(src) {
 async function uploadSiteIcon(e) {
   const file = e.target.files[0]; if (!file) return;
   try {
-    const oldImg = S.siteIcon || '';
     const iconUrl = await uploadRepoImage(file, 'site-icon', { maxW: 128, maxH: 128, quality: 0.9, thumbW: 64, thumbH: 64, thumbQ: 0.85 });
-    if (oldImg && oldImg.includes('/public/img/') && window.MTP?.Writer) {
-      window.MTP.Writer.deleteImage(oldImg).catch(() => {});
-    }
     S.siteIcon = iconUrl;
     const inp = document.getElementById('c2-icon-url');
     if (inp) inp.value = iconUrl;
@@ -1976,8 +1964,14 @@ function saveShopUrl() {
 }
 
 function applyShopButton() {
-  const btn = document.getElementById('btn-goto-shop');
-  if (btn) btn.style.display = S.shopUrl ? 'inline-flex' : 'none';
+  // header btn removed — now using floating button
+  const floatWrap = document.getElementById('float-shop-wrap');
+  const floatLbl = document.getElementById('float-shop-lbl');
+  if (floatWrap) floatWrap.style.display = S.shopUrl ? 'block' : 'none';
+  if (floatLbl) {
+    const name = (S.config && S.config.systemName) ? S.config.systemName : 'Mi Tienda';
+    floatLbl.textContent = name;
+  }
 }
 
 // ────────────────────────────────────────────────
