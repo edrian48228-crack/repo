@@ -733,6 +733,14 @@ select.inp option{background:var(--card)}
   .float-ava-wrap{bottom:16px;right:16px}
   .float-ava-bubble{max-width:220px;min-width:180px}
 }
+/* Boton flotante Mi Tienda: en movil va a la izquierda para no chocar con el avatar */
+@media(max-width:720px){
+  #float-shop-wrap{
+    right:auto!important;
+    left:16px!important;
+    bottom:calc(80px + env(safe-area-inset-bottom,0px))!important;
+  }
+}
 .promo-strat-card{
   background:var(--clr-b,rgba(255,102,0,.1));border:1px solid color-mix(in srgb,var(--clr,#ff6600) 30%,transparent);
   border-radius:16px;padding:22px 18px;transition:all .25s;position:relative;overflow:hidden;
