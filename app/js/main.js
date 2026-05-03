@@ -1966,10 +1966,9 @@ function saveShopUrl() {
 
 function applyShopButton() {
   const floatLbl = document.getElementById('float-shop-lbl');
-  const heroLbl  = document.getElementById('hero-shop-lbl');
   const name = (S.config && S.config.systemName) ? S.config.systemName : 'Tienda Principal';
   if (floatLbl) floatLbl.textContent = 'Ver ' + name;
-  if (heroLbl)  heroLbl.textContent = 'Ver ' + name;
+  // hero-shop-lbl se mantiene fijo desde el HTML, no se sobreescribe
 }
 
 // ────────────────────────────────────────────────
