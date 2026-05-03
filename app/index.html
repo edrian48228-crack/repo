@@ -35,7 +35,7 @@
 
       <button class="btn-reg-sell" onclick="openVendorModal()" title="Registrarme como Vendedor">🏪<span class="brs-txt"> Vendedor</span></button>
       <button class="btn-admin-pro" onclick="openAdminLogin()">
-        <span class="bap-ico">🛡️</span><span class="adm-txt">Admin</span><span class="bap-shine"></span>
+        <span class="bap-ico">🛡️</span><span class="bap-shine"></span>
       </button>
     </div>
   </div>
@@ -52,9 +52,9 @@
   <div class="sparks" id="sparks"></div>
   <div style="position:relative;z-index:1;text-align:center;width:100%">
     <div class="hero-badge">🔥 Sistema de Ventas Profesional · Edrian Cruz Down</div>
-    <div id="hero-shop-btn-wrap" style="margin:22px 0 -10px">
+    <div id="hero-shop-btn-wrap" style="margin:22px 0 -8px">
       <a id="hero-shop-btn" onclick="gotoShop();return false;" href="#"
-        style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff2200,#ff6600);color:#fff;font-family:var(--fh);font-weight:900;font-size:16px;padding:14px 36px;border-radius:32px;text-decoration:none;box-shadow:0 4px 28px rgba(255,102,0,.55);transition:transform .2s;animation:regPulse 2.5s ease-in-out infinite alternate">
+        style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff2200,#ff6600);color:#fff;font-family:var(--fh);font-weight:900;font-size:16px;padding:14px 36px;border-radius:32px;text-decoration:none;box-shadow:0 4px 28px rgba(255,102,0,.55);animation:regPulse 2.5s ease-in-out infinite alternate">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span id="hero-shop-lbl">🛍️ Acceder a Tienda Principal</span>
       </a>
@@ -262,11 +262,11 @@
 </div>
 <!-- ══════ AVATAR FLOTANTE (parte inferior derecha) ══════ -->
 <!-- ══════ FLOATING SHOP BUTTON ══════ -->
-<div id="float-shop-wrap" style="position:fixed;bottom:110px;right:28px;z-index:901">
+<div id="float-shop-wrap" style="position:fixed;bottom:28px;left:28px;z-index:901">
   <a id="float-shop-btn" onclick="gotoShop();return false;" href="#"
     style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#ff2200,#ff6600);color:#fff;font-family:var(--fh);font-weight:900;font-size:13px;padding:11px 20px;border-radius:28px;text-decoration:none;box-shadow:0 4px 24px rgba(255,102,0,.6);transition:all .2s;white-space:nowrap;animation:regPulse 2.5s ease-in-out infinite alternate">
     <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-    <span id="float-shop-lbl">Mi Tienda</span>
+    <span id="float-shop-lbl" class="fsl-txt">Acceder a Tienda Principal</span>
   </a>
 </div>
 
