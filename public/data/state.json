@@ -156,7 +156,7 @@
   ],
   "avatar": {
     "name": "TiendaBot",
-    "img": "../public/img/avatar-1776980098422.webp",
+    "img": "../public/img/avatar-1777803807837.webp",
     "color": "#ff6600",
     "colorFade": "rgba(255,102,0,.3)",
     "gradient": "linear-gradient(135deg,#ff2200 0%,#ff6600 50%,#ff8800 100%)",
@@ -169,6 +169,8 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
+  "promoActive": false,
+  "exitTarget": null,
   "sellers": [
     {
       "id": "v1776947358756",
@@ -285,5 +287,5 @@
   "shopUrl": "",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777803789139
+  "__ts": 1777803817937
 }
