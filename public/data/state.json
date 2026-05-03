@@ -19,8 +19,8 @@
       "icon": "⚡",
       "name": "STARTER",
       "period": "1 mes",
-      "price": 2500,
-      "promo": 5000,
+      "price": 111,
+      "promo": 1500,
       "popular": false,
       "feats": [
         "Sistema completo de tienda",
@@ -35,8 +35,8 @@
       "icon": "🌙",
       "name": "BÁSICO",
       "period": "3 meses",
-      "price": 5000,
-      "promo": 8000,
+      "price": 10000,
+      "promo": 12500,
       "popular": false,
       "feats": [
         "Todo lo del Starter",
@@ -51,8 +51,8 @@
       "icon": "🔥",
       "name": "PRO",
       "period": "6 meses",
-      "price": 10000,
-      "promo": 15000,
+      "price": 15000,
+      "promo": 17500,
       "popular": true,
       "feats": [
         "Todo lo del Básico",
@@ -68,7 +68,7 @@
       "name": "ANUAL",
       "period": "12 meses",
       "price": 20000,
-      "promo": 25000,
+      "promo": 22500,
       "popular": false,
       "feats": [
         "Todo lo del Pro",
@@ -83,8 +83,8 @@
       "icon": "💎",
       "name": "BIANUAL",
       "period": "24 meses",
-      "price": 25000,
-      "promo": 30000,
+      "price": 30000,
+      "promo": 32500,
       "popular": false,
       "feats": [
         "Todo lo del Anual",
@@ -169,8 +169,6 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
-  "promoActive": false,
-  "exitTarget": null,
   "sellers": [
     {
       "id": "v1776947358756",
@@ -284,8 +282,8 @@
   },
   "testimonials": [],
   "siteIcon": "https://edrian48228-crack.github.io/repo/public/img/site-icon-1776946985539.webp",
-  "shopUrl": "https://edrian48228-crack.github.io/repotienda/",
+  "shopUrl": "",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777827306920
+  "__ts": 1777827306715
 }
