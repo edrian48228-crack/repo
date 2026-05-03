@@ -19,7 +19,7 @@
       "icon": "⚡",
       "name": "STARTER",
       "period": "1 mes",
-      "price": 111,
+      "price": 320000,
       "promo": 1500,
       "popular": false,
       "feats": [
@@ -169,8 +169,6 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
-  "promoActive": false,
-  "exitTarget": null,
   "sellers": [
     {
       "id": "v1776947358756",
@@ -247,9 +245,9 @@
     }
   ],
   "analytics": {
-    "visits": 2,
+    "visits": 1,
     "regs": 0,
-    "lastVisit": "2026-05-03T08:16:59.967Z"
+    "lastVisit": "2026-04-23T20:37:59.268Z"
   },
   "terms": {
     "url": "",
@@ -287,5 +285,7 @@
   "shopUrl": "",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777796398325
+  "__ts": 1777796398111,
+  "promoActive": false,
+  "exitTarget": null
 }
