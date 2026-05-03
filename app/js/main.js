@@ -1969,7 +1969,7 @@ function applyShopButton() {
   const heroLbl  = document.getElementById('hero-shop-lbl');
   const name = (S.config && S.config.systemName) ? S.config.systemName : 'Tienda Principal';
   if (floatLbl) floatLbl.textContent = 'Ver ' + name;
-  if (heroLbl)  heroLbl.textContent = '🛍️ Acceder a ' + name;
+  if (heroLbl)  heroLbl.textContent = 'Ver ' + name;
 }
 
 // ────────────────────────────────────────────────
