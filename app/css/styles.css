@@ -983,4 +983,4 @@ footer{padding:34px 20px;text-align:center;border-top:1px solid var(--bdr)}
   .ped-row{grid-template-columns:1fr 1fr}
 }
 
-@media(max-width:900px){.fsl-txt{display:none}#float-shop-wrap a{padding:11px 14px;border-radius:50%;width:46px;height:46px;justify-content:center}}
+

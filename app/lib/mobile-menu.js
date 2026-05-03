@@ -41,11 +41,13 @@
         header#hdr .hnav-wrap{display:none!important}
         header#hdr .hdr-right > a:not(.mtp-burger),header#hdr .hdr-right > button:not(.mtp-burger){display:none!important}
         header#hdr .hdr-right{gap:6px}
+        #hdr-shop-btn{display:none!important}
       }
       @media (min-width:901px){
         .mtp-burger{display:none!important}
         header#hdr .hnav-wrap{display:flex!important}
         header#hdr .hdr-right > a,header#hdr .hdr-right > button:not(.mtp-burger){display:inline-flex!important}
+        #hdr-shop-btn{display:inline-flex!important}
       }
       body.mtp-no-scroll{overflow:hidden}
     `;
@@ -88,11 +90,39 @@
     // Clonar los botones de acción del header
     const actions = document.querySelectorAll("header#hdr .hdr-right > a, header#hdr .hdr-right > button");
     const actHost = panel.querySelector(".mtp-mobile-actions");
+
+    // Primero agregar el botón de tienda (está fuera de hdr-right)
+    const shopBtn = document.getElementById("hdr-shop-btn");
+    if (shopBtn) {
+      const sc = shopBtn.cloneNode(true);
+      sc.removeAttribute("id");
+      sc.style.cssText = ""; // resetear inline styles para que el panel le aplique sus estilos
+      sc.style.cssText = "display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#ff2200,#ff6600);color:#fff;font-family:var(--fh,Nunito);font-weight:900;font-size:13px;padding:12px 18px;border-radius:28px;text-decoration:none;width:100%;box-sizing:border-box;justify-content:center;box-shadow:0 4px 20px rgba(255,102,0,.5)";
+      sc.addEventListener("click", () => setTimeout(close, 50));
+      actHost.appendChild(sc);
+    }
+
     actions.forEach((b) => {
       if (b.classList.contains("mtp-burger")) return;
       const c = b.cloneNode(true);
       // re-bind onclick si existe (clone no copia listeners pero sí el atributo)
       c.addEventListener("click", () => setTimeout(close, 50));
+      // Etiquetas específicas para móvil
+      if (b.classList.contains("btn-reg-sell")) {
+        const txt = c.querySelector(".brs-txt");
+        if (txt) txt.textContent = " Registrar Vendedor";
+      }
+      if (b.classList.contains("btn-admin-pro")) {
+        c.title = "Administrador";
+        // Añadir texto visible al lado del ícono en móvil
+        if (!c.querySelector(".bap-txt")) {
+          const span = document.createElement("span");
+          span.className = "bap-txt";
+          span.style.cssText = "font-size:12px;font-weight:800;font-family:var(--fh,Nunito);margin-left:6px;color:#c084fc";
+          span.textContent = "Administrador";
+          c.appendChild(span);
+        }
+      }
       actHost.appendChild(c);
     });
 
