@@ -257,15 +257,9 @@
 
 <!-- ══════ QUICK ACCESS ══════ -->
 <div class="qa-float">
-  <a id="qa-shop-btn" onclick="gotoShop();return false;" href="#"
-    style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(255,102,0,.08);border:1px solid rgba(255,102,0,.25);text-decoration:none;transition:background .2s;backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(0,0,0,.5)">
-    <span style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#ff2200,#ff6600);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(255,102,0,.45)">
-      <svg width="17" height="17" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-    </span>
-    <span style="display:flex;flex-direction:column;gap:1px">
-      <span id="float-shop-lbl" style="font-family:var(--fh,Nunito);font-weight:800;font-size:14px;color:#fff;white-space:nowrap">Acceder a Tienda Principal</span>
-      <span style="font-size:10px;color:rgba(255,255,255,.45);font-family:var(--fh,Nunito)">Ver mi tienda online</span>
-    </span>
+  <a id="qa-shop-btn" class="qa-btn" onclick="gotoShop();return false;" href="#" style="--qc:#ff2200;--qcs:rgba(255,34,0,.5)">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    <span class="qa-lbl" id="float-shop-lbl">Ver Tienda Principal</span>
   </a>
   <a class="qa-btn" href="#tiendas-sec" style="--qc:#ff6600;--qcs:rgba(255,102,0,.5)"><span style="font-size:18px">🏪</span><span class="qa-lbl">Visitar Nuestras Tiendas</span></a>
   <button class="qa-btn" onclick="openAffiliateLink()" style="--qc:#22c55e;--qcs:rgba(34,197,94,.5);border:1.5px solid #22c55e;color:#22c55e;background:rgba(8,8,8,.92)"><span style="font-size:18px">💰</span><span class="qa-lbl">Ganar Dinero Promoviendo</span></button>
