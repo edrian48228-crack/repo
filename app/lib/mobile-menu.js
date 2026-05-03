@@ -7,7 +7,7 @@
   function injectStyles() {
     if (document.getElementById("mtp-mobile-menu-css")) return;
     const css = `
-      .mtp-burger{display:none;background:transparent;border:1.5px solid var(--o,#ff6600);color:var(--o,#ff6600);
+      .mtp-burger{display:none!important;background:transparent;border:1.5px solid var(--o,#ff6600);color:var(--o,#ff6600);
         width:42px;height:42px;border-radius:10px;align-items:center;justify-content:center;cursor:pointer;
         margin-left:8px;flex-shrink:0}
       .mtp-burger:hover{background:rgba(255,102,0,.1)}
@@ -45,7 +45,7 @@
       @media (min-width:901px){
         .mtp-burger{display:none!important}
         header#hdr .hnav-wrap{display:flex!important}
-        header#hdr .hdr-right > a:not(.mtp-burger),header#hdr .hdr-right > button:not(.mtp-burger){display:inline-flex!important}
+        header#hdr .hdr-right > a,header#hdr .hdr-right > button:not(.mtp-burger){display:inline-flex!important}
       }
       body.mtp-no-scroll{overflow:hidden}
     `;

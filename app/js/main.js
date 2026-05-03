@@ -1762,6 +1762,7 @@ function renderSellers() {
       <td style="padding:10px 12px;border-bottom:1px solid var(--bdr2)"><div style="display:flex;gap:4px;flex-wrap:wrap">
         <button onclick="viewSeller('${s.id}')" title="Ver" style="background:rgba(255,102,0,.08);border:1px solid rgba(255,102,0,.25);color:var(--blue);border-radius:6px;padding:5px 8px;cursor:pointer;font-size:12px">👁</button>
         <button onclick="openSellerEdit('${s.id}')" title="Editar" style="background:rgba(255,102,0,.12);border:1px solid rgba(255,102,0,.3);color:var(--o);border-radius:6px;padding:5px 8px;cursor:pointer;font-size:12px">✏️</button>
+        ${s.wa ? `<a href="https://wa.me/${(s.wa||'').replace(/\D/g,'')}" target="_blank" title="WhatsApp" style="background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25d366;border-radius:6px;padding:5px 8px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center">💬</a>` : ''}
         ${s.wa ? `<a href="https://wa.me/${(s.wa||'').replace(/\D/g,'')}" target="_blank" title="WhatsApp" style="background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25d366;border-radius:6px;padding:5px 8px;cursor:pointer;font-size:12px;text-decoration:none;display:inline-flex;align-items:center">💬</a>` : ''}
         <button onclick="genContract('${s.id}')" title="Contrato" style="background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.3);color:#c084fc;border-radius:6px;padding:5px 8px;cursor:pointer;font-size:12px">📄</button>
         <button onclick="delSeller('${s.id}')" title="Eliminar" style="background:rgba(255,34,0,.12);border:1px solid rgba(255,34,0,.3);color:var(--r);border-radius:6px;padding:5px 8px;cursor:pointer;font-size:12px">🗑</button>
@@ -1964,13 +1965,11 @@ function saveShopUrl() {
 }
 
 function applyShopButton() {
-  const floatWrap = document.getElementById('float-shop-wrap');
-  const floatLbl  = document.getElementById('float-shop-lbl');
-  if (floatWrap) floatWrap.style.display = S.shopUrl ? 'block' : 'none';
-  if (floatLbl) {
-    const name = (S.config && S.config.systemName) ? S.config.systemName : 'Mi Tienda';
-    floatLbl.textContent = name;
-  }
+  const floatLbl = document.getElementById('float-shop-lbl');
+  const heroLbl  = document.getElementById('hero-shop-lbl');
+  const name = (S.config && S.config.systemName) ? S.config.systemName : 'Mi Tienda Principal';
+  if (floatLbl) floatLbl.textContent = name;
+  if (heroLbl)  heroLbl.textContent = '🛍️ ' + name;
 }
 
 // ────────────────────────────────────────────────
