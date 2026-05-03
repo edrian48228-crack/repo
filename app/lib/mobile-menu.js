@@ -47,7 +47,6 @@
         .mtp-burger{display:none!important}
         header#hdr .hnav-wrap{display:flex!important}
         header#hdr .hdr-right > a,header#hdr .hdr-right > button:not(.mtp-burger){display:inline-flex!important}
-        #hdr-shop-btn{display:inline-flex!important}
       }
       body.mtp-no-scroll{overflow:hidden}
     `;
@@ -89,21 +88,6 @@
 
     // Clonar los botones de acción del header
     const actHost = panel.querySelector(".mtp-mobile-actions");
-
-    // ── Botón Tienda Principal ──
-    const shopRow = document.createElement("a");
-    shopRow.href = "#";
-    shopRow.onclick = (e) => { e.preventDefault(); setTimeout(close, 80); if(typeof gotoShop==="function") gotoShop(); };
-    shopRow.innerHTML = `
-      <span style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#ff2200,#ff6600);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(255,102,0,.45)">
-        <svg width="17" height="17" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      </span>
-      <span style="display:flex;flex-direction:column;gap:1px">
-        <span id="float-shop-lbl" style="font-family:var(--fh,Nunito);font-weight:800;font-size:14px;color:#fff">Acceder a Tienda Principal</span>
-        <span style="font-size:10px;color:rgba(255,255,255,.45);font-family:var(--fh,Nunito)">Ver mi tienda online</span>
-      </span>`;
-    shopRow.style.cssText = "display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(255,102,0,.08);border:1px solid rgba(255,102,0,.25);text-decoration:none;transition:background .2s";
-    actHost.appendChild(shopRow);
 
     // ── Botón Registrar Vendedor ──
     const vendRow = document.createElement("button");
