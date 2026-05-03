@@ -88,43 +88,50 @@
     });
 
     // Clonar los botones de acción del header
-    const actions = document.querySelectorAll("header#hdr .hdr-right > a, header#hdr .hdr-right > button");
     const actHost = panel.querySelector(".mtp-mobile-actions");
 
-    // Primero agregar el botón de tienda (está fuera de hdr-right)
-    const shopBtn = document.getElementById("hdr-shop-btn");
-    if (shopBtn) {
-      const sc = shopBtn.cloneNode(true);
-      sc.removeAttribute("id");
-      sc.style.cssText = ""; // resetear inline styles para que el panel le aplique sus estilos
-      sc.style.cssText = "display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#ff2200,#ff6600);color:#fff;font-family:var(--fh,Nunito);font-weight:900;font-size:13px;padding:12px 18px;border-radius:28px;text-decoration:none;width:100%;box-sizing:border-box;justify-content:center;box-shadow:0 4px 20px rgba(255,102,0,.5)";
-      sc.addEventListener("click", () => setTimeout(close, 50));
-      actHost.appendChild(sc);
-    }
+    // ── Botón Tienda Principal ──
+    const shopRow = document.createElement("a");
+    shopRow.href = "#";
+    shopRow.onclick = (e) => { e.preventDefault(); setTimeout(close, 80); if(typeof gotoShop==="function") gotoShop(); };
+    shopRow.innerHTML = `
+      <span style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#ff2200,#ff6600);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(255,102,0,.45)">
+        <svg width="17" height="17" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </span>
+      <span style="display:flex;flex-direction:column;gap:1px">
+        <span id="float-shop-lbl" style="font-family:var(--fh,Nunito);font-weight:800;font-size:14px;color:#fff">Acceder a Tienda Principal</span>
+        <span style="font-size:10px;color:rgba(255,255,255,.45);font-family:var(--fh,Nunito)">Ver mi tienda online</span>
+      </span>`;
+    shopRow.style.cssText = "display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(255,102,0,.08);border:1px solid rgba(255,102,0,.25);text-decoration:none;transition:background .2s";
+    actHost.appendChild(shopRow);
 
-    actions.forEach((b) => {
-      if (b.classList.contains("mtp-burger")) return;
-      const c = b.cloneNode(true);
-      // re-bind onclick si existe (clone no copia listeners pero sí el atributo)
-      c.addEventListener("click", () => setTimeout(close, 50));
-      // Etiquetas específicas para móvil
-      if (b.classList.contains("btn-reg-sell")) {
-        const txt = c.querySelector(".brs-txt");
-        if (txt) txt.textContent = " Registrar Vendedor";
-      }
-      if (b.classList.contains("btn-admin-pro")) {
-        c.title = "Administrador";
-        // Añadir texto visible al lado del ícono en móvil
-        if (!c.querySelector(".bap-txt")) {
-          const span = document.createElement("span");
-          span.className = "bap-txt";
-          span.style.cssText = "font-size:12px;font-weight:800;font-family:var(--fh,Nunito);margin-left:6px;color:#c084fc";
-          span.textContent = "Administrador";
-          c.appendChild(span);
-        }
-      }
-      actHost.appendChild(c);
-    });
+    // ── Botón Registrar Vendedor ──
+    const vendRow = document.createElement("button");
+    vendRow.onclick = () => { setTimeout(close, 80); if(typeof openVendorModal==="function") openVendorModal(); };
+    vendRow.innerHTML = `
+      <span style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#ff6600,#ff8800);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(255,136,0,.4)">
+        <span style="font-size:18px">🏪</span>
+      </span>
+      <span style="display:flex;flex-direction:column;gap:1px;text-align:left">
+        <span style="font-family:var(--fh,Nunito);font-weight:800;font-size:14px;color:#fff">Registrar Vendedor</span>
+        <span style="font-size:10px;color:rgba(255,255,255,.45);font-family:var(--fh,Nunito)">Crear cuenta de vendedor</span>
+      </span>`;
+    vendRow.style.cssText = "display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(255,136,0,.08);border:1px solid rgba(255,136,0,.22);width:100%;cursor:pointer;transition:background .2s";
+    actHost.appendChild(vendRow);
+
+    // ── Botón Administrador ──
+    const admRow = document.createElement("button");
+    admRow.onclick = () => { setTimeout(close, 80); if(typeof openAdminLogin==="function") openAdminLogin(); };
+    admRow.innerHTML = `
+      <span style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(168,85,247,.4)">
+        <span style="font-size:18px">🛡️</span>
+      </span>
+      <span style="display:flex;flex-direction:column;gap:1px;text-align:left">
+        <span style="font-family:var(--fh,Nunito);font-weight:800;font-size:14px;color:#fff">Administrador</span>
+        <span style="font-size:10px;color:rgba(255,255,255,.45);font-family:var(--fh,Nunito)">Panel de control</span>
+      </span>`;
+    admRow.style.cssText = "display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.22);width:100%;cursor:pointer;transition:background .2s";
+    actHost.appendChild(admRow);
 
     panel.querySelector(".mtp-mobile-close").addEventListener("click", close);
     backdrop.addEventListener("click", close);
