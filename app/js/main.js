@@ -118,6 +118,10 @@ function saveS() {
     toSave.adminPass = enc(S.adminPass);
     toSave.recoverAnswer = enc(S.recoverAnswer);
     localStorage.setItem('mtp_v2', JSON.stringify(toSave));
+    // Actualizar timestamp de build para invalidar caché del SW automáticamente
+    const ts = Date.now();
+    document.documentElement.dataset.buildTs = ts;
+    localStorage.setItem('mtp_build_ts', ts);
   } catch(e) {}
 }
 

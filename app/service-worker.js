@@ -1,4 +1,4 @@
-/* MiTienda Pro — Service Worker v1.1.0
+/* MiTienda Pro — Service Worker
  * Offline-first robusto. Compatible con GitHub Pages (rutas relativas).
  *
  * Estrategias:
@@ -9,9 +9,15 @@
  *  - raw.githubusercontent    -> stale-while-revalidate (datos JSON públicos)
  *  - Imágenes                 -> cache-first
  *
- * Bump VERSION cuando cambies precache.
+ * VERSION: el navegador compara byte a byte el SW con el servidor.
+ * Si cualquier archivo del sistema cambia y el SW se re-sube, el navegador
+ * detecta el cambio y reinstala todo. No tocar VERSION manualmente.
  */
-const VERSION = "v1.4.2";
+
+// El navegador detecta cambios en el SW comparando su contenido byte a byte.
+// Para forzar reinstalación en cada deploy, el registro del SW desde index.html
+// pasa un parámetro ?v= con timestamp. Ver index.html script de registro.
+const VERSION = new URL(location.href).searchParams.get("v") || "v1.4.2";
 const STATIC_CACHE  = `mtp-static-${VERSION}`;
 const RUNTIME_CACHE = `mtp-runtime-${VERSION}`;
 const HTML_CACHE    = `mtp-html-${VERSION}`;

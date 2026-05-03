@@ -15,7 +15,7 @@ const isPreview = location.hostname.includes("id-preview--") || location.hostnam
 
 if ("serviceWorker" in navigator) {
   if (!isPreview && !isInIframe) {
-    navigator.serviceWorker.register("./service-worker.js").catch((e) => console.warn("[SW] error:", e));
+    navigator.serviceWorker.register("./service-worker.js?v=" + (document.documentElement.dataset.buildTs || localStorage.getItem("mtp_build_ts") || Date.now())).catch((e) => console.warn("[SW] error:", e));
   } else {
     // Limpia SWs previos en preview/iframe para evitar caches obsoletos
     navigator.serviceWorker.getRegistrations().then((rs) => rs.forEach((r) => r.unregister()));
