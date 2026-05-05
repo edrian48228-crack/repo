@@ -88,6 +88,27 @@ function mergeRemote(S, remote) {
   return changed;
 }
 
+/** Envía URLs de imágenes al SW para que las cachee en background. */
+function cacheImagesViaSW(state) {
+  if (!navigator.serviceWorker?.controller || !state) return;
+  const urls = new Set();
+  // Recopilar todas las URLs de imagen del estado
+  function walk(obj) {
+    if (!obj || typeof obj !== "object") return;
+    for (const v of Object.values(obj)) {
+      if (typeof v === "string" && (v.startsWith("http") || v.startsWith("../public/img/")) && /\.(png|jpg|jpeg|gif|webp|svg|ico)/i.test(v)) {
+        urls.add(v);
+      } else if (typeof v === "object") {
+        walk(v);
+      }
+    }
+  }
+  walk(state);
+  for (const url of urls) {
+    navigator.serviceWorker.controller.postMessage({ type: "CACHE_IMAGE", url });
+  }
+}
+
 export const GhSync = {
   /** Pull del JSON remoto (sin token, lectura pública). Devuelve el objeto o null. */
   async pull() {
@@ -133,6 +154,7 @@ export const GhSync = {
       try { window.saveS && window.saveS({ __skipPush: true }); } catch {}
       try { window.renderAll && window.renderAll(); } catch {}
       try { window.loadAdminUI && window.loadAdminUI(); } catch {}
+      try { cacheImagesViaSW(window.S); } catch {}
       await DB.log("ok", "gh-sync: estado remoto aplicado");
     }
     return changed;
@@ -201,9 +223,15 @@ export const GhSync = {
       }
     }, 200);
 
-    // Pull periódico cada 60s para ver cambios de otros dispositivos
-    setInterval(() => { pulled = false; GhSync.pullAndApply().catch(() => {}); }, 60_000);
-    // También al volver online
+    // Pull periódico cada 15s para ver cambios de otros dispositivos más rápido
+    setInterval(() => { pulled = false; GhSync.pullAndApply().catch(() => {}); }, 15_000);
+    // Al volver online
     window.addEventListener("online", () => { pulled = false; GhSync.pullAndApply().catch(() => {}); });
+    // Al volver a la pestaña / desbloquear pantalla en Android
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") { pulled = false; GhSync.pullAndApply().catch(() => {}); }
+    });
+    // Al enfocar la ventana (útil en escritorio)
+    window.addEventListener("focus", () => { pulled = false; GhSync.pullAndApply().catch(() => {}); });
   },
 };

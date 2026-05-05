@@ -47,5 +47,33 @@ import { Backup } from "./backup.js";
 import { RepoInit } from "./repo-init.js";
 import { AdminConfig } from "./admin-config.js";
 
+// Cachear imágenes del estado local al arrancar (para offline completo)
+function warmImageCache() {
+  if (!navigator.serviceWorker?.controller || !window.S) return;
+  function collectUrls(obj, urls = new Set()) {
+    if (!obj || typeof obj !== "object") return urls;
+    for (const v of Object.values(obj)) {
+      if (typeof v === "string" && /\.(png|jpg|jpeg|gif|webp|svg|ico)/i.test(v) && (v.startsWith("http") || v.startsWith("."))) {
+        urls.add(v);
+      } else if (typeof v === "object") collectUrls(v, urls);
+    }
+    return urls;
+  }
+  const urls = collectUrls(window.S);
+  for (const url of urls) {
+    navigator.serviceWorker.controller.postMessage({ type: "CACHE_IMAGE", url });
+  }
+}
+// Esperar a que SW esté activo y S esté cargado
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.ready.then(() => {
+    let tries = 0;
+    const t = setInterval(() => {
+      if (window.S) { clearInterval(t); warmImageCache(); }
+      else if (++tries > 30) clearInterval(t);
+    }, 300);
+  }).catch(() => {});
+}
+
 window.MTP = { Reader, Writer, GitHub, ImageOpt, Backup, RepoInit, Sync, GhSync, AdminConfig, DB };
 console.log("[MTP] PWA stack lista. window.MTP disponible.");

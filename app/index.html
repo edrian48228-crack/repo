@@ -1300,6 +1300,49 @@
   <script src="./js/sync-hook.js"></script>
   <script src="./js/admin-menu.js"></script>
 
+<!-- ══════ Botón flotante instalación PWA ══════ -->
+<div id="pwa-install-btn" style="
+  display:none;
+  position:fixed;
+  bottom:24px;
+  right:20px;
+  z-index:99999;
+  background:#ff6600;
+  color:#fff;
+  border:none;
+  border-radius:50px;
+  padding:13px 20px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 4px 18px rgba(255,102,0,0.45);
+  align-items:center;
+  gap:9px;
+  transition:transform .15s,box-shadow .15s;
+  font-family:inherit;
+" onclick="window.__pwaPrompt && window.__pwaPrompt.prompt()">
+  <span style="font-size:18px">📲</span> Instalar App
+</div>
+<script>
+(function(){
+  let deferredPrompt;
+  const btn = document.getElementById('pwa-install-btn');
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferredPrompt = e;
+    window.__pwaPrompt = e;
+    btn.style.display = 'flex';
+  });
+  btn.addEventListener('mouseenter', function(){ btn.style.transform='scale(1.06)'; btn.style.boxShadow='0 6px 24px rgba(255,102,0,0.6)'; });
+  btn.addEventListener('mouseleave', function(){ btn.style.transform='scale(1)'; btn.style.boxShadow='0 4px 18px rgba(255,102,0,0.45)'; });
+  window.addEventListener('appinstalled', function(){
+    btn.style.display = 'none';
+    deferredPrompt = null;
+    window.__pwaPrompt = null;
+  });
+})();
+</script>
+
 <!-- ══════ MTP PWA + GitHub layer (no toca diseño/funcionalidad) ══════ -->
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#ff6600">
