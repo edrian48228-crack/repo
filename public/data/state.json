@@ -169,8 +169,6 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
-  "promoActive": false,
-  "exitTarget": null,
   "sellers": [
     {
       "id": "v1776947358756",
@@ -287,5 +285,7 @@
   "shopUrl": "https://edrian48228-crack.github.io/repotienda/",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777986265655
+  "__ts": 1777987457820,
+  "promoActive": false,
+  "exitTarget": null
 }
