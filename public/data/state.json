@@ -122,7 +122,7 @@
       "icon": "🛍️",
       "title": "Ver Mi Tienda",
       "sub": "Tienda online funcionando",
-      "url": "#",
+      "url": "https://edrian48228-crack.github.io/repotienda/",
       "arrow": "Visitar tienda"
     },
     {
@@ -169,6 +169,8 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
+  "promoActive": false,
+  "exitTarget": null,
   "sellers": [
     {
       "id": "v1776947358756",
@@ -245,9 +247,9 @@
     }
   ],
   "analytics": {
-    "visits": 1,
+    "visits": 2,
     "regs": 0,
-    "lastVisit": "2026-04-23T20:37:59.268Z"
+    "lastVisit": "2026-05-05T12:52:00.976Z"
   },
   "terms": {
     "url": "",
@@ -282,8 +284,8 @@
   },
   "testimonials": [],
   "siteIcon": "https://edrian48228-crack.github.io/repo/public/img/site-icon-1776946985539.webp",
-  "shopUrl": "",
+  "shopUrl": "https://edrian48228-crack.github.io/repotienda/",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777985470410
+  "__ts": 1777985526326
 }
