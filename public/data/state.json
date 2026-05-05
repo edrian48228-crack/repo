@@ -169,40 +169,6 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
-  "promoActive": false,
-  "exitTarget": null,
-  "sellers": [
-    {
-      "id": "v1776947358756",
-      "fn": "Edr",
-      "ln": "Cruz down",
-      "ph": "",
-      "wa": "",
-      "em": "icdanger48228@gmail.com",
-      "addr": "Gtmo",
-      "cat": "Tecnología",
-      "sn": "coco",
-      "desc": "es el coco de agua",
-      "storeUrl": "https://mail.proton.me/u/",
-      "status": "active",
-      "ts": "2026-04-23T12:29:18.756Z"
-    },
-    {
-      "id": "v1776947547640",
-      "fn": "Edr",
-      "ln": "Cruz down",
-      "ph": "",
-      "wa": "",
-      "em": "icdanger48228@gmail.com",
-      "addr": "Gtmo",
-      "cat": "Tecnología",
-      "sn": "lala",
-      "desc": "la mejor del mundo",
-      "storeUrl": "https://mail.protyuyn.me/u/",
-      "status": "inactive",
-      "ts": "2026-04-23T12:32:27.640Z"
-    }
-  ],
   "clientStores": [
     {
       "id": "cs1776947734939",
@@ -216,41 +182,6 @@
       "sellerId": ""
     }
   ],
-  "notifications": [
-    {
-      "id": "n1776947561330",
-      "msg": "Vendedor Edr Cruz down desactivado ❌",
-      "icon": "📋",
-      "ts": "2026-04-23T12:32:41.330Z",
-      "read": false
-    },
-    {
-      "id": "n1776947547641",
-      "msg": "Vendedor agregado: Edr Cruz down — lala",
-      "icon": "👤",
-      "ts": "2026-04-23T12:32:27.641Z",
-      "read": false
-    },
-    {
-      "id": "n1776947434375",
-      "msg": "Vendedor Edr Cruz down activado ✅",
-      "icon": "📋",
-      "ts": "2026-04-23T12:30:34.375Z",
-      "read": false
-    },
-    {
-      "id": "n1776947413932",
-      "msg": "Vendedor Edr Cruz down desactivado ❌",
-      "icon": "📋",
-      "ts": "2026-04-23T12:30:13.932Z",
-      "read": false
-    }
-  ],
-  "analytics": {
-    "visits": 2,
-    "regs": 0,
-    "lastVisit": "2026-05-05T12:52:00.976Z"
-  },
   "terms": {
     "url": "",
     "text": "TÉRMINOS Y CONDICIONES DE MITIENDA PRO\n\n1. ACEPTACIÓN\nAl usar MiTienda Pro aceptas estos términos. El usuario es responsable del contenido de su tienda.\n\n2. SERVICIO\nMiTienda Pro provee sistemas de ventas online profesionales.\n\n3. PAGOS\nLas suscripciones no son reembolsables una vez activadas.\n\n4. OBLIGACIONES\nEl vendedor se compromete a usar el sistema de forma legal y ética.\n\n5. PRIVACIDAD\nLos datos son confidenciales y no se comparten con terceros.\n\n— Edrian Cruz Down, Ing. en Informática. Todos los derechos reservados"
@@ -284,8 +215,77 @@
   },
   "testimonials": [],
   "siteIcon": "https://edrian48228-crack.github.io/repo/public/img/site-icon-1776946985539.webp",
-  "shopUrl": "https://edrian48228-crack.github.io/repotienda/",
+  "shopUrl": "",
   "jsonAutoUrl": "",
   "contractTemplate": {},
-  "__ts": 1777985526326
+  "sellers": [
+    {
+      "id": "v1776947358756",
+      "fn": "Edr",
+      "ln": "Cruz down",
+      "ph": "",
+      "wa": "",
+      "em": "icdanger48228@gmail.com",
+      "addr": "Gtmo",
+      "cat": "Tecnología",
+      "sn": "coco",
+      "desc": "es el coco de agua",
+      "storeUrl": "https://mail.proton.me/u/",
+      "status": "active",
+      "ts": "2026-04-23T12:29:18.756Z"
+    },
+    {
+      "id": "v1776947547640",
+      "fn": "Edr",
+      "ln": "Cruz down",
+      "ph": "",
+      "wa": "",
+      "em": "icdanger48228@gmail.com",
+      "addr": "Gtmo",
+      "cat": "Tecnología",
+      "sn": "lala",
+      "desc": "la mejor del mundo",
+      "storeUrl": "https://mail.protyuyn.me/u/",
+      "status": "inactive",
+      "ts": "2026-04-23T12:32:27.640Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "n1776947561330",
+      "msg": "Vendedor Edr Cruz down desactivado ❌",
+      "icon": "📋",
+      "ts": "2026-04-23T12:32:41.330Z",
+      "read": false
+    },
+    {
+      "id": "n1776947547641",
+      "msg": "Vendedor agregado: Edr Cruz down — lala",
+      "icon": "👤",
+      "ts": "2026-04-23T12:32:27.641Z",
+      "read": false
+    },
+    {
+      "id": "n1776947434375",
+      "msg": "Vendedor Edr Cruz down activado ✅",
+      "icon": "📋",
+      "ts": "2026-04-23T12:30:34.375Z",
+      "read": false
+    },
+    {
+      "id": "n1776947413932",
+      "msg": "Vendedor Edr Cruz down desactivado ❌",
+      "icon": "📋",
+      "ts": "2026-04-23T12:30:13.932Z",
+      "read": false
+    }
+  ],
+  "analytics": {
+    "visits": 1,
+    "regs": 0,
+    "lastVisit": "2026-04-23T20:37:59.268Z"
+  },
+  "promoActive": false,
+  "exitTarget": null,
+  "__ts": 1777985525994
 }
