@@ -169,55 +169,8 @@
       "🎯 ¡Aumenta tus ventas con una tienda profesional!"
     ]
   },
-  "clientStores": [
-    {
-      "id": "cs1776947734939",
-      "name": "estocolmo",
-      "url": "https://github.com/edria",
-      "cat": "Tecnología",
-      "addr": "cuba, gtmo,",
-      "desc": "es agrande",
-      "img": "https://github.com/edria",
-      "vis": "visible",
-      "sellerId": ""
-    }
-  ],
-  "terms": {
-    "url": "",
-    "text": "TÉRMINOS Y CONDICIONES DE MITIENDA PRO\n\n1. ACEPTACIÓN\nAl usar MiTienda Pro aceptas estos términos. El usuario es responsable del contenido de su tienda.\n\n2. SERVICIO\nMiTienda Pro provee sistemas de ventas online profesionales.\n\n3. PAGOS\nLas suscripciones no son reembolsables una vez activadas.\n\n4. OBLIGACIONES\nEl vendedor se compromete a usar el sistema de forma legal y ética.\n\n5. PRIVACIDAD\nLos datos son confidenciales y no se comparten con terceros.\n\n— Edrian Cruz Down, Ing. en Informática. Todos los derechos reservados"
-  },
-  "promoConfig": {
-    "title": "Promocionamos tu Tienda Online",
-    "subtitle": "Herramientas para hacer crecer tu negocio",
-    "promoLinks": [
-      {
-        "id": "pl1",
-        "title": "WhatsApp",
-        "msg": "¡Hola! Conoce MiTienda Pro 🔥 Tienda online completa. Prueba 7 días GRATIS.",
-        "url": ""
-      },
-      {
-        "id": "pl2",
-        "title": "Facebook",
-        "msg": "",
-        "url": ""
-      },
-      {
-        "id": "pl3",
-        "title": "Telegram",
-        "msg": "",
-        "url": ""
-      }
-    ],
-    "affiliateUrl": "www.pp.com",
-    "storesVisible": 6,
-    "securityEnabled": false
-  },
-  "testimonials": [],
-  "siteIcon": "https://edrian48228-crack.github.io/repo/public/img/site-icon-1776946985539.webp",
-  "shopUrl": "",
-  "jsonAutoUrl": "",
-  "contractTemplate": {},
+  "promoActive": false,
+  "exitTarget": null,
   "sellers": [
     {
       "id": "v1776947358756",
@@ -248,6 +201,19 @@
       "storeUrl": "https://mail.protyuyn.me/u/",
       "status": "inactive",
       "ts": "2026-04-23T12:32:27.640Z"
+    }
+  ],
+  "clientStores": [
+    {
+      "id": "cs1776947734939",
+      "name": "estocolmo",
+      "url": "https://github.com/edria",
+      "cat": "Tecnología",
+      "addr": "cuba, gtmo,",
+      "desc": "es agrande",
+      "img": "https://github.com/edria",
+      "vis": "visible",
+      "sellerId": ""
     }
   ],
   "notifications": [
@@ -281,11 +247,45 @@
     }
   ],
   "analytics": {
-    "visits": 1,
+    "visits": 3,
     "regs": 0,
-    "lastVisit": "2026-04-23T20:37:59.268Z"
+    "lastVisit": "2026-05-05T13:04:20.261Z"
   },
-  "promoActive": false,
-  "exitTarget": null,
-  "__ts": 1777986265326
+  "terms": {
+    "url": "",
+    "text": "TÉRMINOS Y CONDICIONES DE MITIENDA PRO\n\n1. ACEPTACIÓN\nAl usar MiTienda Pro aceptas estos términos. El usuario es responsable del contenido de su tienda.\n\n2. SERVICIO\nMiTienda Pro provee sistemas de ventas online profesionales.\n\n3. PAGOS\nLas suscripciones no son reembolsables una vez activadas.\n\n4. OBLIGACIONES\nEl vendedor se compromete a usar el sistema de forma legal y ética.\n\n5. PRIVACIDAD\nLos datos son confidenciales y no se comparten con terceros.\n\n— Edrian Cruz Down, Ing. en Informática. Todos los derechos reservados"
+  },
+  "promoConfig": {
+    "title": "Promocionamos tu Tienda Online",
+    "subtitle": "Herramientas para hacer crecer tu negocio",
+    "promoLinks": [
+      {
+        "id": "pl1",
+        "title": "WhatsApp",
+        "msg": "¡Hola! Conoce MiTienda Pro 🔥 Tienda online completa. Prueba 7 días GRATIS.",
+        "url": ""
+      },
+      {
+        "id": "pl2",
+        "title": "Facebook",
+        "msg": "",
+        "url": ""
+      },
+      {
+        "id": "pl3",
+        "title": "Telegram",
+        "msg": "",
+        "url": ""
+      }
+    ],
+    "affiliateUrl": "www.pp.com",
+    "storesVisible": 6,
+    "securityEnabled": false
+  },
+  "testimonials": [],
+  "siteIcon": "https://edrian48228-crack.github.io/repo/public/img/site-icon-1776946985539.webp",
+  "shopUrl": "https://edrian48228-crack.github.io/repotienda/",
+  "jsonAutoUrl": "",
+  "contractTemplate": {},
+  "__ts": 1777986265655
 }
