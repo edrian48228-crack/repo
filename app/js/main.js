@@ -12,7 +12,7 @@ let S = {
     freeFeats: ['Sistema web completo','APK Android incluida','Panel de administración','Carrito de compras','Dashboard estadístico','Avatar promotor animado'],
   },
   plans: [
-    { id:'p1', icon:'⚡', name:'STARTER',  period:'1 mes',   price:2500,  promo:7500,  popular:false,
+    { id:'p1', icon:'⚡', name:'STARTER',  period:'1 mes',   price:2300,  promo:5500,  popular:false,
       feats:['Sistema completo de tienda','Carrito y pedidos WhatsApp','Panel de administración','Avatar animado promotor','Dashboard con estadísticas'] },
     { id:'p2', icon:'🌙', name:'BÁSICO',   period:'3 meses', price:6500, promo:10500, popular:false,
       feats:['Todo lo del Starter','Gestión de proveedores','Múltiples fotos por producto','Exportar / importar datos','Formas de pago personalizables'] },
