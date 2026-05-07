@@ -11,7 +11,7 @@
  * Offline: si no hay red Y hay cache → siempre sirve desde cache sin errores.
  */
 
-const VERSION = new URL(location.href).searchParams.get("v") || "v2.0.0";
+const VERSION = new URL(location.href).searchParams.get("v") || "v3.0.0";
 const STATIC_CACHE  = `mtp-static-${VERSION}`;
 const RUNTIME_CACHE = `mtp-runtime-${VERSION}`;
 const HTML_CACHE    = `mtp-html-${VERSION}`;
