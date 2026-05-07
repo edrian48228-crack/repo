@@ -14,9 +14,9 @@ let S = {
   plans: [
     { id:'p1', icon:'⚡', name:'STARTER/PROMO BASE',  period:'1 mes',   price:1300,  promo:2500,  popular:true,
       feats:['Sistema completo de tienda','Carrito y pedidos WhatsApp','Panel de administración','Avatar animado promotor','Dashboard con estadísticas'] },
-    { id:'p2', icon:'🌙', name:'BÁSICO/PROMO BASE',   period:'3 meses', price:3000, promo:4500, popular:false,
+    { id:'p2', icon:'🌙', name:'BÁSICO/PROMO BASE',   period:'3 meses', price:2500, promo:4500, popular:false,
       feats:['Todo lo del Starter','Gestión de proveedores','Múltiples fotos por producto','Exportar / importar datos','Formas de pago personalizables'] },
-    { id:'p3', icon:'🔥', name:'PRO/PROMO BASE',      period:'6 meses', price:5500, promo:7500, popular:true,
+    { id:'p3', icon:'🔥', name:'PRO/PROMO BASE',      period:'6 meses', price:4500, promo:7500, popular:true,
       feats:['Todo lo del Básico','Links personalizados portada','Auto-actualización SW','Soporte prioritario','Actualizaciones del sistema'] },
     { id:'p4', icon:'🏆', name:'ANUAL/PROMO BASE',    period:'12 meses',price:7500, promo:10500, popular:false,
       feats:['Todo lo del Pro','Máximo ahorro anual','12 meses de actualizaciones','Soporte extendido','Sin interrupciones todo el año'] },
