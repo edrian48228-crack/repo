@@ -370,7 +370,7 @@ function renderPlansGrid() {
       <div class="pc-period">⏱ ${esc(p.period)}</div>
       <div class="pc-price" id="pp-${p.id}">${fmt(p.price)} <span>CUP</span></div>
       <div class="pc-po" id="po-${p.id}">Normal: ${fmt(p.price)} CUP</div>
-      <div class="pc-pn" id="pn-${p.id}">Con promo: ${fmt(p.promo)} CUP</div>
+      <div class="pc-pn" id="pn-${p.id}">CON PROMOCIÓN AVANZADA: ${fmt(p.promo)} CUP</div>
       <div class="pc-div"></div>
       <ul class="pc-feats">${(p.feats||[]).map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
       <button class="pc-cta" onclick="planWA('${p.id}')">📱 Contratar por WhatsApp</button>
