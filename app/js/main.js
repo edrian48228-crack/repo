@@ -20,7 +20,7 @@ let S = {
       feats:['Todo lo del Básico','Links personalizados portada','Auto-actualización SW','Soporte prioritario','Actualizaciones del sistema'] },
     { id:'p4', icon:'🏆', name:'ANUAL/PROMO BASE',    period:'12 meses',price:10500, promo:15500, popular:false,
       feats:['Todo lo del Pro','Máximo ahorro anual','12 meses de actualizaciones','Soporte extendido','Sin interrupciones todo el año'] },
-    { id:'p5', icon:'💎', name:'BIANUAL/PROMO BASE',  period:'24 meses',price:17500, promo:20500, popular:false,
+    { id:'p5', icon:'💎', name:'BIANUAL/PROMO BASE',  period:'24 meses',price:17500, promo:25500, popular:false,
       feats:['Todo lo del Anual','2 años de tranquilidad','Precio bloqueado 2 años','Atención VIP','Mejor inversión a largo plazo'] },
   ],
   ownerWeb: 37500,
