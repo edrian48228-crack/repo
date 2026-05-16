@@ -216,7 +216,7 @@ select.inp option{background:var(--card)}
 .hnav-free{background:linear-gradient(135deg,rgba(255,34,0,.12),rgba(255,102,0,.1))!important;border:1.5px solid rgba(255,102,0,.5)!important;color:var(--o)!important;animation:freeGlow 2.5s ease-in-out infinite alternate}
 .hnav-free:hover{box-shadow:0 0 22px rgba(255,102,0,.5)!important}
 @keyframes freeGlow{from{box-shadow:0 0 5px rgba(255,102,0,.2)}to{box-shadow:0 0 18px rgba(255,102,0,.6)}}
-.btn-reg-sell{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#ff2200,#ff6600,#ff8800);border:none;border-radius:22px;padding:8px 12px;cursor:pointer;font-family:var(--fh);font-size:11px;font-weight:900;color:#fff;box-shadow:0 4px 18px rgba(255,102,0,.45);animation:regPulse 2.5s ease-in-out infinite alternate;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.btn-reg-sell{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff2200,#ff6600,#ff8800);border:none;border-radius:22px;padding:8px 12px;cursor:pointer;font-family:var(--fh);font-size:11px;font-weight:900;color:#fff;box-shadow:0 4px 18px rgba(255,102,0,.45);animation:regPulse 2.5s ease-in-out infinite alternate;transition:all .2s;white-space:nowrap;flex-shrink:0}
 .btn-reg-sell .brs-txt{display:inline}
 .btn-reg-sell:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,102,0,.7)}
 @keyframes regPulse{from{box-shadow:0 4px 14px rgba(255,102,0,.4)}to{box-shadow:0 4px 28px rgba(255,102,0,.8),0 0 45px rgba(255,34,0,.2)}}
