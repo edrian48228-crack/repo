@@ -1,0 +1,556 @@
+{
+  "label": "manual",
+  "ts": 1778904717754,
+  "config": {
+    "gh_owner": "edrian48228-crack",
+    "gh_repo": "repo",
+    "gh_branch": "main"
+  },
+  "logs": [
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904716008,
+      "id": 68
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904715982,
+      "id": 67
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904708325,
+      "id": 66
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904708282,
+      "id": 65
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904701052,
+      "id": 64
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904701001,
+      "id": 63
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904686184,
+      "id": 62
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904686138,
+      "id": 61
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904686091,
+      "id": 60
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904686088,
+      "id": 59
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904686087,
+      "id": 58
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904686049,
+      "id": 57
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904671172,
+      "id": 56
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904671136,
+      "id": 55
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904656069,
+      "id": 54
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904655998,
+      "id": 53
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904655677,
+      "id": 52
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904655642,
+      "id": 51
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904655641,
+      "id": 50
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904655609,
+      "id": 49
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904653364,
+      "id": 48
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904653329,
+      "id": 47
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904653313,
+      "id": 46
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904653269,
+      "id": 45
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904641154,
+      "id": 44
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904641126,
+      "id": 43
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904626158,
+      "id": 42
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904626137,
+      "id": 41
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904611040,
+      "id": 40
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904611000,
+      "id": 39
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904596025,
+      "id": 38
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904595992,
+      "id": 37
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904581013,
+      "id": 36
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904580978,
+      "id": 35
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904566027,
+      "id": 34
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904565989,
+      "id": 33
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904557769,
+      "id": 32
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904557727,
+      "id": 31
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904557726,
+      "id": 30
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904557697,
+      "id": 29
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904557057,
+      "id": 28
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904556995,
+      "id": 27
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904536157,
+      "id": 26
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904536129,
+      "id": 25
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904476157,
+      "id": 24
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904476131,
+      "id": 23
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904416155,
+      "id": 22
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904416131,
+      "id": 21
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904356181,
+      "id": 20
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904356134,
+      "id": 19
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904326146,
+      "id": 18
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904326119,
+      "id": 17
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904311149,
+      "id": 16
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904311124,
+      "id": 15
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904296142,
+      "id": 14
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904296115,
+      "id": 13
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904281151,
+      "id": 12
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904281120,
+      "id": 11
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904266150,
+      "id": 10
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904266123,
+      "id": 9
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904251144,
+      "id": 8
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904251114,
+      "id": 7
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904237244,
+      "id": 6
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904237195,
+      "id": 5
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904233567,
+      "id": 4
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904233522,
+      "id": 3
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync: estado remoto aplicado",
+      "meta": {},
+      "ts": 1778904229564,
+      "id": 2
+    },
+    {
+      "level": "ok",
+      "msg": "gh-sync pull OK",
+      "meta": {
+        "url": "https://edrian48228-crack.github.io/repo/public/data/state.json"
+      },
+      "ts": 1778904229524,
+      "id": 1
+    }
+  ],
+  "queue": []
+}
