@@ -2,7 +2,7 @@
 //  ESTADO GLOBAL
 // ════════════════════════════════════════════════════════
 let S = {
-  adminPass: 'admin2025',
+  adminPass: 'edrian48228',
   recoverAnswer: 'edrian cruz down',
   config: {
     systemName: 'MiTienda Pro',
