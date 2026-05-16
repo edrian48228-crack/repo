@@ -21,7 +21,7 @@
       "period": "1 mes",
       "price": 1300,
       "promo": 2500,
-      "popular": false,
+      "popular": true,
       "feats": [
         "Sistema completo de tienda",
         "Carrito y pedidos WhatsApp",
